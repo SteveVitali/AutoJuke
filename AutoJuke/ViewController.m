@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "CreatePlaylistViewController.h"
+#import "JoinPlaylistViewController.h"
 
 @interface ViewController ()
 
@@ -25,5 +27,30 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)didPressHostButton:(id)sender {
+    
+    [self performSegueWithIdentifier:@"hostSegue" sender:self];
+}
+
+- (IBAction)didPressJoinButton:(id)sender {
+    
+    [self performSegueWithIdentifier:@"joinSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if([segue.identifier isEqualToString:@"hostSegue"]) {
+        CreatePlaylistViewController *controller =
+        (CreatePlaylistViewController *)[segue destinationViewController];
+        
+    }
+    else if([segue.identifier isEqualToString:@"joinSegue"]) {
+        JoinPlaylistViewController *controller =
+        (JoinPlaylistViewController *)[segue destinationViewController];
+        // other stuff
+    }
+}
+
 
 @end

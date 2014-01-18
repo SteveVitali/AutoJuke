@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11F963D1188AF4330051FC0C /* CreatePlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */; };
+		11F963DB188AF53D0051FC0C /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963DA188AF53D0051FC0C /* Playlist.m */; };
+		11F963DE188AF5AE0051FC0C /* ViewPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963DD188AF5AE0051FC0C /* ViewPlaylistViewController.m */; };
+		11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */; };
 		BC5DF596188AB95C00845C4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA2DC5A188A4CF600667BB9 /* Main.storyboard */; };
 		BC667627188AD63B008FACAF /* CocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC667626188AD63B008FACAF /* CocoaLibSpotify.a */; };
 		BCA2DC49188A4CF600667BB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DC48188A4CF600667BB9 /* Foundation.framework */; };
@@ -45,6 +49,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11F963CF188AF4330051FC0C /* CreatePlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreatePlaylistViewController.h; path = ../CreatePlaylistViewController.h; sourceTree = "<group>"; };
+		11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreatePlaylistViewController.m; path = ../CreatePlaylistViewController.m; sourceTree = "<group>"; };
+		11F963D9188AF53D0051FC0C /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
+		11F963DA188AF53D0051FC0C /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
+		11F963DC188AF5AE0051FC0C /* ViewPlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPlaylistViewController.h; sourceTree = "<group>"; };
+		11F963DD188AF5AE0051FC0C /* ViewPlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPlaylistViewController.m; sourceTree = "<group>"; };
+		11F963E2188AF8D10051FC0C /* JoinPlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinPlaylistViewController.h; sourceTree = "<group>"; };
+		11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinPlaylistViewController.m; sourceTree = "<group>"; };
 		BC14F6E5188A98070064CFA1 /* AutoJuke.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AutoJuke.entitlements; sourceTree = "<group>"; };
 		BC667626188AD63B008FACAF /* CocoaLibSpotify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = CocoaLibSpotify.a; sourceTree = "<group>"; };
 		BCA2DC45188A4CF600667BB9 /* AutoJuke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoJuke.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +162,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11F963D5188AF4D70051FC0C /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BCA2DC5D188A4CF600667BB9 /* ViewController.h */,
+				BCA2DC5E188A4CF600667BB9 /* ViewController.m */,
+				11F963CF188AF4330051FC0C /* CreatePlaylistViewController.h */,
+				11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */,
+				11F963DC188AF5AE0051FC0C /* ViewPlaylistViewController.h */,
+				11F963DD188AF5AE0051FC0C /* ViewPlaylistViewController.m */,
+				11F963E2188AF8D10051FC0C /* JoinPlaylistViewController.h */,
+				11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		11F963D7188AF4EC0051FC0C /* views */ = {
+			isa = PBXGroup;
+			children = (
+				BCA2DC5A188A4CF600667BB9 /* Main.storyboard */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		11F963D8188AF4F30051FC0C /* models */ = {
+			isa = PBXGroup;
+			children = (
+				11F963D9188AF53D0051FC0C /* Playlist.h */,
+				11F963DA188AF53D0051FC0C /* Playlist.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		BC2AE8C6188A943300516469 /* SP */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,14 +278,14 @@
 		BCA2DC4E188A4CF600667BB9 /* AutoJuke */ = {
 			isa = PBXGroup;
 			children = (
+				11F963D8188AF4F30051FC0C /* models */,
+				11F963D7188AF4EC0051FC0C /* views */,
+				11F963D5188AF4D70051FC0C /* controllers */,
+				BCA2DC57188A4CF600667BB9 /* AppDelegate.h */,
+				BCA2DC58188A4CF600667BB9 /* AppDelegate.m */,
 				BC14F6E5188A98070064CFA1 /* AutoJuke.entitlements */,
 				BCDC041F188A84ED00F01D35 /* assets */,
 				BCA2DC7D188A4E4000667BB9 /* cocoaLibSpotify */,
-				BCA2DC57188A4CF600667BB9 /* AppDelegate.h */,
-				BCA2DC58188A4CF600667BB9 /* AppDelegate.m */,
-				BCA2DC5A188A4CF600667BB9 /* Main.storyboard */,
-				BCA2DC5D188A4CF600667BB9 /* ViewController.h */,
-				BCA2DC5E188A4CF600667BB9 /* ViewController.m */,
 				BCA2DC60188A4CF600667BB9 /* Images.xcassets */,
 				BCA2DC4F188A4CF600667BB9 /* Supporting Files */,
 			);
@@ -425,7 +469,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCA2DC5F188A4CF600667BB9 /* ViewController.m in Sources */,
+				11F963DB188AF53D0051FC0C /* Playlist.m in Sources */,
 				BCA2DC59188A4CF600667BB9 /* AppDelegate.m in Sources */,
+				11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */,
+				11F963DE188AF5AE0051FC0C /* ViewPlaylistViewController.m in Sources */,
+				11F963D1188AF4330051FC0C /* CreatePlaylistViewController.m in Sources */,
 				BCA2DC55188A4CF600667BB9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

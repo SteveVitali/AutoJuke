@@ -10,4 +10,7 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)didPressHostButton:(id)sender;
+- (IBAction)didPressJoinButton:(id)sender;
+
 @end
