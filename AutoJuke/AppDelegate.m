@@ -3,14 +3,14 @@
 //  AutoJuke
 //
 //  Created by Steve John Vitali on 1/17/14.
-//  Copyright (c) 2014 Steve John Vitali. All rights reserved.
+//  Copyright (c) 2014 Point One. All rights reserved.
 //
 
 #import "AppDelegate.h"
 #import "CocoaLibSpotify.h"
 #import "ViewController.h"
 
-#define SP_LIBSPOTIFY_DEBUG_LOGGING 0
+#define SP_LIBSPOTIFY_DEBUG_LOGGING 1
 
 #include "appkey.c"
 
@@ -18,11 +18,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    /***************************
+     ** ViewController Access **
+     ***************************/
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Override point for customization after application launch.
-	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-	    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+	// if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+	    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.viewController = [storyboard instantiateInitialViewController];
 	}
+    
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
@@ -30,6 +38,8 @@
 	NSData *appKey = [NSData dataWithBytes:&g_appkey length:g_appkey_size];
     
 	NSError *error = nil;
+    
+    // TODO following method causes uncaught exception on Sam's iPhone
 	[SPSession initializeSharedSessionWithApplicationKey:appKey
 											   userAgent:userAgent
 										   loadingPolicy:SPAsyncLoadingManual
@@ -41,10 +51,11 @@
     
 	[[SPSession sharedSession] setDelegate:self];
     
-	SPLoginViewController *controller = [SPLoginViewController loginControllerForSession:[SPSession sharedSession]];
-	controller.allowsCancel = NO;
+	SPLoginViewController *spotifyLogin = [SPLoginViewController
+                                           loginControllerForSession:[SPSession sharedSession]];
+	spotifyLogin.allowsCancel = NO;
 	// ^ To allow the user to cancel (i.e., your application doesn't require a logged-in Spotify user, set this to YES.
-	[self.viewController presentModalViewController:controller animated:NO];
+	[self.viewController presentViewController:spotifyLogin animated:NO completion:nil];
     
     return YES;
 }

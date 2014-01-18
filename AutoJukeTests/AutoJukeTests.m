@@ -2,8 +2,8 @@
 //  AutoJukeTests.m
 //  AutoJukeTests
 //
-//  Created by Steve John Vitali on 1/17/14.
-//  Copyright (c) 2014 Steve John Vitali. All rights reserved.
+//  Created by Sam Moore on 1/18/14.
+//  Copyright (c) 2014 Point One. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

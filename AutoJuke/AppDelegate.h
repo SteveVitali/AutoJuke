@@ -3,7 +3,7 @@
 //  AutoJuke
 //
 //  Created by Steve John Vitali on 1/17/14.
-//  Copyright (c) 2014 Steve John Vitali. All rights reserved.
+//  Copyright (c) 2014 Point One. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,8 +14,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate, SPSessionDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) UIViewController *viewController;
 
 @end
 
