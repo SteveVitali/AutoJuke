@@ -32,15 +32,15 @@
 
 - (IBAction)createPlaylist:(id)sender {
    
-    
     [self performSegueWithIdentifier:@"createPlaylistSegue" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if([segue.identifier isEqualToString:@"viewPlaylistSegue"]) {
+    if([segue.identifier isEqualToString:@"createPlaylistSegue"]) {
         PlaylistTableViewController *controller =
         (PlaylistTableViewController *)[segue destinationViewController];
+        controller.playlist = [[Playlist alloc] init];
         controller.playlist.name = self.nameField.text;
     }
 }

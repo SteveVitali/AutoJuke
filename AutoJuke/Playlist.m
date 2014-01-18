@@ -13,7 +13,8 @@
 - (id)init {
     self = [super init];
     if (self) {
-
+        _songs = [[NSMutableArray alloc] init];
+        _users = [[NSMutableArray alloc] init];
     }
     return self;
 }

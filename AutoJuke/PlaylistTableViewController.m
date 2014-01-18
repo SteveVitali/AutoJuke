@@ -9,6 +9,7 @@
 #import "PlaylistTableViewController.h"
 #import "CocoaLibSpotify.h"
 #import "appkey.c"
+#import <Parse/Parse.h>
 
 #define SP_LIBSPOTIFY_DEBUG_LOGGING 1
 
@@ -37,7 +38,6 @@
     //[self.window makeKeyAndVisible];
     
     self.navigationItem.title = self.playlist.name;
-    self.playlist = [[Playlist alloc] init];
     
 	NSError *error = nil;
 	[SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:&g_appkey length:g_appkey_size]
@@ -221,8 +221,6 @@
     // Configure the cell...
     cell.textLabel.text = [[self.playlist.songs objectAtIndex:indexPath.row] name];
     
-    NSLog(@"there are %d items in the tracks list; also this is running from the tableview delegate method",self.playlist.songs.count);
-    
     return cell;
 }
 
@@ -326,14 +324,42 @@
                     for(int i=0; i<[self.playlist.songs count]; i++) {
                         
                         SPTrack *test = [self.playlist.songs objectAtIndex:i];
-                        
-                        NSLog(@"%@", test.name);
+                        if (test.isLocal) {
+                            [self.playlist.songs removeObjectAtIndex:i];
+                        }
+                        NSLog(@"%@", test.spotifyURL.absoluteString);
                     }
+                    NSLog(@"your user name is %@",[[SPSession sharedSession] user].canonicalName);
                     [self.tableView reloadData];
+                    [self addPlaylistToDatabase];
 				}];
 			}];
 		}];
 	}];
+}
+
+- (void)addPlaylistToDatabase {
+    
+    self.playlist.parsePlaylist = [PFObject objectWithClassName:@"Playlist"];
+    
+    NSMutableArray *songNames = [[NSMutableArray alloc] init];
+    NSMutableArray *songURIs  = [[NSMutableArray alloc] init];
+    
+    for(int i=0; i<self.playlist.songs.count; i++) {
+        
+        SPTrack *track = [self.playlist.songs objectAtIndex:i];
+        [songNames addObject:track.name];
+        [songURIs addObject:track.spotifyURL.absoluteString];
+    }
+    NSDictionary *playlistDict = [[NSDictionary alloc] initWithObjects:songNames forKeys:songURIs];
+    
+    NSLog(@"this is the motherfucking title of the playlist: %@", self.playlist.name);
+    
+    self.playlist.parsePlaylist[@"songs"] = playlistDict;
+    self.playlist.parsePlaylist[@"owner"] = [[SPSession sharedSession] user].canonicalName;
+    self.playlist.parsePlaylist[@"name"]  = self.playlist.name;
+    
+    [self.playlist.parsePlaylist save];
 }
 
 -(NSArray *)playlistsInFolder:(SPPlaylistFolder *)aFolder {
@@ -387,5 +413,5 @@
     
 }
 
-
 @end
+

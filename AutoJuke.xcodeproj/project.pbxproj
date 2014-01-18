@@ -14,6 +14,8 @@
 		11A00751188B277E005EDDDF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A00750188B277E005EDDDF /* StoreKit.framework */; };
 		11A00753188B29A1005EDDDF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A00752188B29A1005EDDDF /* Parse.framework */; };
 		11A00755188B2B57005EDDDF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A00754188B2B57005EDDDF /* FacebookSDK.framework */; };
+		11A0075B188B2DA7005EDDDF /* LibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A00758188B2DA7005EDDDF /* LibraryAPI.m */; };
+		11A0075C188B2DA7005EDDDF /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0075A188B2DA7005EDDDF /* PersistencyManager.m */; };
 		11F963D1188AF4330051FC0C /* CreatePlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */; };
 		11F963DB188AF53D0051FC0C /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963DA188AF53D0051FC0C /* Playlist.m */; };
 		11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */; };
@@ -64,6 +66,10 @@
 		11A00750188B277E005EDDDF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		11A00752188B29A1005EDDDF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		11A00754188B2B57005EDDDF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		11A00757188B2DA7005EDDDF /* LibraryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryAPI.h; sourceTree = "<group>"; };
+		11A00758188B2DA7005EDDDF /* LibraryAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryAPI.m; sourceTree = "<group>"; };
+		11A00759188B2DA7005EDDDF /* PersistencyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistencyManager.h; sourceTree = "<group>"; };
+		11A0075A188B2DA7005EDDDF /* PersistencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistencyManager.m; sourceTree = "<group>"; };
 		11F963CF188AF4330051FC0C /* CreatePlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreatePlaylistViewController.h; path = ../CreatePlaylistViewController.h; sourceTree = "<group>"; };
 		11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreatePlaylistViewController.m; path = ../CreatePlaylistViewController.m; sourceTree = "<group>"; };
 		11F963D9188AF53D0051FC0C /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
@@ -185,6 +191,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11A00756188B2D8A005EDDDF /* LibraryAPI */ = {
+			isa = PBXGroup;
+			children = (
+				11A00757188B2DA7005EDDDF /* LibraryAPI.h */,
+				11A00758188B2DA7005EDDDF /* LibraryAPI.m */,
+				11A00759188B2DA7005EDDDF /* PersistencyManager.h */,
+				11A0075A188B2DA7005EDDDF /* PersistencyManager.m */,
+			);
+			name = LibraryAPI;
+			sourceTree = "<group>";
+		};
 		11F963D5188AF4D70051FC0C /* controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +326,7 @@
 		BCA2DC4E188A4CF600667BB9 /* AutoJuke */ = {
 			isa = PBXGroup;
 			children = (
+				11A00756188B2D8A005EDDDF /* LibraryAPI */,
 				11F963D8188AF4F30051FC0C /* models */,
 				11F963D7188AF4EC0051FC0C /* views */,
 				11F963D5188AF4D70051FC0C /* controllers */,
@@ -502,10 +520,12 @@
 			files = (
 				BCA2DC5F188A4CF600667BB9 /* ViewController.m in Sources */,
 				11F963EB188B114C0051FC0C /* PlaylistTableViewController.m in Sources */,
+				11A0075C188B2DA7005EDDDF /* PersistencyManager.m in Sources */,
 				11F963DB188AF53D0051FC0C /* Playlist.m in Sources */,
 				BCA2DC59188A4CF600667BB9 /* AppDelegate.m in Sources */,
 				11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */,
 				11F963D1188AF4330051FC0C /* CreatePlaylistViewController.m in Sources */,
+				11A0075B188B2DA7005EDDDF /* LibraryAPI.m in Sources */,
 				BCA2DC55188A4CF600667BB9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

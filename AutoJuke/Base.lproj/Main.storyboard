@@ -134,7 +134,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nameField" destination="f6C-JD-ywj" id="Aee-RG-dLh"/>
+                        <outlet property="nameField" destination="f6C-JD-ywj" id="zeS-xU-7cK"/>
                         <segue destination="dyM-Wk-KfT" kind="push" identifier="createPlaylistSegue" id="QDC-ot-ZW1"/>
                     </connections>
                 </viewController>

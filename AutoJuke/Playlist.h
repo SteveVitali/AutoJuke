@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @interface Playlist : NSObject
 
 @property NSString *name;
+@property NSString *ownerName;
 @property NSMutableArray *songs;
+@property NSMutableArray *users;
+
+@property PFObject *parsePlaylist;
 
 @end

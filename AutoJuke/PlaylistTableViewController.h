@@ -37,7 +37,6 @@
 @property (nonatomic, strong) SPTrack *currentTrack;
 @property (nonatomic, strong) SPPlaybackManager *playbackManager;
 
-- (IBAction)playTrack:(id)sender;
 - (IBAction)setTrackPosition:(id)sender;
 - (IBAction)setVolume:(id)sender;
 
