@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CocoaLibSpotify.h"
 
-@interface CreatePlaylistViewController : UIViewController
+@interface CreatePlaylistViewController : UIViewController <SPSessionPlaybackDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 

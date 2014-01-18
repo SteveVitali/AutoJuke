@@ -11,6 +11,7 @@
 		11F963DB188AF53D0051FC0C /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963DA188AF53D0051FC0C /* Playlist.m */; };
 		11F963DE188AF5AE0051FC0C /* ViewPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963DD188AF5AE0051FC0C /* ViewPlaylistViewController.m */; };
 		11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */; };
+		11F963E8188B00290051FC0C /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F963E7188B00290051FC0C /* MainWindow_iPhone.xib */; };
 		BC5DF596188AB95C00845C4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA2DC5A188A4CF600667BB9 /* Main.storyboard */; };
 		BC667627188AD63B008FACAF /* CocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC667626188AD63B008FACAF /* CocoaLibSpotify.a */; };
 		BCA2DC49188A4CF600667BB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DC48188A4CF600667BB9 /* Foundation.framework */; };
@@ -57,6 +58,7 @@
 		11F963DD188AF5AE0051FC0C /* ViewPlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPlaylistViewController.m; sourceTree = "<group>"; };
 		11F963E2188AF8D10051FC0C /* JoinPlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinPlaylistViewController.h; sourceTree = "<group>"; };
 		11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinPlaylistViewController.m; sourceTree = "<group>"; };
+		11F963E7188B00290051FC0C /* MainWindow_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow_iPhone.xib; sourceTree = "<group>"; };
 		BC14F6E5188A98070064CFA1 /* AutoJuke.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AutoJuke.entitlements; sourceTree = "<group>"; };
 		BC667626188AD63B008FACAF /* CocoaLibSpotify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = CocoaLibSpotify.a; sourceTree = "<group>"; };
 		BCA2DC45188A4CF600667BB9 /* AutoJuke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoJuke.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +182,7 @@
 		11F963D7188AF4EC0051FC0C /* views */ = {
 			isa = PBXGroup;
 			children = (
+				11F963E7188B00290051FC0C /* MainWindow_iPhone.xib */,
 				BCA2DC5A188A4CF600667BB9 /* Main.storyboard */,
 			);
 			name = views;
@@ -445,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCA2DC61188A4CF600667BB9 /* Images.xcassets in Resources */,
+				11F963E8188B00290051FC0C /* MainWindow_iPhone.xib in Resources */,
 				BCA2DC53188A4CF600667BB9 /* InfoPlist.strings in Resources */,
 				BCDC0631188A850500F01D35 /* glyphicons_000_glass.png in Resources */,
 				BCA2DCB7188A4F4300667BB9 /* SPLoginResources.bundle in Resources */,
