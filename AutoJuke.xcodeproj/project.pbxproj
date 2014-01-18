@@ -21,6 +21,16 @@
 		11E57369188A206200742422 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E5734B188A206200742422 /* UIKit.framework */; };
 		11E57371188A206200742422 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11E5736F188A206200742422 /* InfoPlist.strings */; };
 		11E57373188A206200742422 /* AutoJukeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E57372188A206200742422 /* AutoJukeTests.m */; };
+		11E5737D188A209E00742422 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E5737C188A209E00742422 /* SystemConfiguration.framework */; };
+		11E5737F188A20A400742422 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E5737E188A20A400742422 /* CFNetwork.framework */; };
+		11E57381188A20AD00742422 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E57380188A20AD00742422 /* libstdc++.dylib */; };
+		11E57383188A20B300742422 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E57382188A20B300742422 /* CoreAudio.framework */; };
+		11E57385188A20B900742422 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E57384188A20B900742422 /* AudioToolbox.framework */; };
+		11E57387188A20BF00742422 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E57386188A20BF00742422 /* AVFoundation.framework */; };
+		11E57389188A20C500742422 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E57388188A20C500742422 /* Security.framework */; };
+		11E57395188A218600742422 /* libCocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E57390188A214F00742422 /* libCocoaLibSpotify.a */; };
+		11E573A3188A27B200742422 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E573A2188A27B200742422 /* ViewController_iPhone.xib */; };
+		11E573A6188A2DF200742422 /* SPLoginResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11E573A5188A2DF200742422 /* SPLoginResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +40,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 11E57343188A206100742422;
 			remoteInfo = AutoJuke;
+		};
+		11E5738F188A214F00742422 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11E5738A188A214E00742422 /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 50AF49DC1439CBFE00E4A5EF;
+			remoteInfo = CocoaLibSpotify;
+		};
+		11E57391188A214F00742422 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11E5738A188A214E00742422 /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 50D4F52B156BCDE800E237DD;
+			remoteInfo = CocoaLSTests;
+		};
+		11E57393188A217B00742422 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11E5738A188A214E00742422 /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 50AF49DB1439CBFE00E4A5EF;
+			remoteInfo = CocoaLibSpotify;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -53,6 +84,16 @@
 		11E5736E188A206200742422 /* AutoJukeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoJukeTests-Info.plist"; sourceTree = "<group>"; };
 		11E57370188A206200742422 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		11E57372188A206200742422 /* AutoJukeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoJukeTests.m; sourceTree = "<group>"; };
+		11E5737C188A209E00742422 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		11E5737E188A20A400742422 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		11E57380188A20AD00742422 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		11E57382188A20B300742422 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		11E57384188A20B900742422 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		11E57386188A20BF00742422 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		11E57388188A20C500742422 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		11E5738A188A214E00742422 /* CocoaLibSpotify iOS Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify iOS Library.xcodeproj"; path = "../cocoalibspotify-master/iOS Library/CocoaLibSpotify iOS Library.xcodeproj"; sourceTree = "<group>"; };
+		11E573A2188A27B200742422 /* ViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPhone.xib; sourceTree = "<group>"; };
+		11E573A5188A2DF200742422 /* SPLoginResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SPLoginResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +101,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11E57395188A218600742422 /* libCocoaLibSpotify.a in Frameworks */,
+				11E57389188A20C500742422 /* Security.framework in Frameworks */,
+				11E57387188A20BF00742422 /* AVFoundation.framework in Frameworks */,
+				11E57385188A20B900742422 /* AudioToolbox.framework in Frameworks */,
+				11E57383188A20B300742422 /* CoreAudio.framework in Frameworks */,
+				11E57381188A20AD00742422 /* libstdc++.dylib in Frameworks */,
+				11E5737F188A20A400742422 /* CFNetwork.framework in Frameworks */,
+				11E5737D188A209E00742422 /* SystemConfiguration.framework in Frameworks */,
 				11E5734A188A206200742422 /* CoreGraphics.framework in Frameworks */,
 				11E5734C188A206200742422 /* UIKit.framework in Frameworks */,
 				11E57348188A206200742422 /* Foundation.framework in Frameworks */,
@@ -82,6 +131,7 @@
 		11E5733B188A206100742422 = {
 			isa = PBXGroup;
 			children = (
+				11E5738A188A214E00742422 /* CocoaLibSpotify iOS Library.xcodeproj */,
 				11E5734D188A206200742422 /* AutoJuke */,
 				11E5736C188A206200742422 /* AutoJukeTests */,
 				11E57346188A206200742422 /* Frameworks */,
@@ -101,6 +151,14 @@
 		11E57346188A206200742422 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11E573A5188A2DF200742422 /* SPLoginResources.bundle */,
+				11E57388188A20C500742422 /* Security.framework */,
+				11E57386188A20BF00742422 /* AVFoundation.framework */,
+				11E57384188A20B900742422 /* AudioToolbox.framework */,
+				11E57382188A20B300742422 /* CoreAudio.framework */,
+				11E57380188A20AD00742422 /* libstdc++.dylib */,
+				11E5737E188A20A400742422 /* CFNetwork.framework */,
+				11E5737C188A209E00742422 /* SystemConfiguration.framework */,
 				11E57347188A206200742422 /* Foundation.framework */,
 				11E57349188A206200742422 /* CoreGraphics.framework */,
 				11E5734B188A206200742422 /* UIKit.framework */,
@@ -112,6 +170,7 @@
 		11E5734D188A206200742422 /* AutoJuke */ = {
 			isa = PBXGroup;
 			children = (
+				11E573A2188A27B200742422 /* ViewController_iPhone.xib */,
 				11E57356188A206200742422 /* AppDelegate.h */,
 				11E57357188A206200742422 /* AppDelegate.m */,
 				11E57359188A206200742422 /* Main.storyboard */,
@@ -152,6 +211,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		11E5738B188A214E00742422 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11E57390188A214F00742422 /* libCocoaLibSpotify.a */,
+				11E57392188A214F00742422 /* CocoaLSTests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +234,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				11E57394188A217B00742422 /* PBXTargetDependency */,
 			);
 			name = AutoJuke;
 			productName = AutoJuke;
@@ -215,6 +284,12 @@
 			mainGroup = 11E5733B188A206100742422;
 			productRefGroup = 11E57345188A206100742422 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 11E5738B188A214E00742422 /* Products */;
+					ProjectRef = 11E5738A188A214E00742422 /* CocoaLibSpotify iOS Library.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				11E57343188A206100742422 /* AutoJuke */,
@@ -223,14 +298,33 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		11E57390188A214F00742422 /* libCocoaLibSpotify.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCocoaLibSpotify.a;
+			remoteRef = 11E5738F188A214F00742422 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		11E57392188A214F00742422 /* CocoaLSTests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CocoaLSTests.app;
+			remoteRef = 11E57391188A214F00742422 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		11E57342188A206100742422 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11E573A6188A2DF200742422 /* SPLoginResources.bundle in Resources */,
 				11E57360188A206200742422 /* Images.xcassets in Resources */,
 				11E57352188A206200742422 /* InfoPlist.strings in Resources */,
 				11E5735B188A206200742422 /* Main.storyboard in Resources */,
+				11E573A3188A27B200742422 /* ViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +365,11 @@
 			target = 11E57343188A206100742422 /* AutoJuke */;
 			targetProxy = 11E5736A188A206200742422 /* PBXContainerItemProxy */;
 		};
+		11E57394188A217B00742422 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaLibSpotify;
+			targetProxy = 11E57393188A217B00742422 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -304,7 +403,7 @@
 		11E57374188A206200742422 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -336,6 +435,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -343,7 +443,7 @@
 		11E57375188A206200742422 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -368,6 +468,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -376,11 +477,18 @@
 		11E57377188A206200742422 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$CONFIGURATION_BUILD_DIR/include/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoJuke/AutoJuke-Prefix.pch";
 				INFOPLIST_FILE = "AutoJuke/AutoJuke-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -389,11 +497,18 @@
 		11E57378188A206200742422 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$CONFIGURATION_BUILD_DIR/include/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoJuke/AutoJuke-Prefix.pch";
 				INFOPLIST_FILE = "AutoJuke/AutoJuke-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -460,6 +575,7 @@
 				11E57378188A206200742422 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		11E57379188A206200742422 /* Build configuration list for PBXNativeTarget "AutoJukeTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +584,7 @@
 				11E5737B188A206200742422 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
