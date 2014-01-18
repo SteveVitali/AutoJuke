@@ -94,7 +94,7 @@
 		[SPAsyncLoading waitUntilLoaded:aSession.user timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
 			
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Hello %@!", aSession.user.displayName]
-															message:@"You should ask the developer of this app to make it do something!"
+															message:@"Something, something AutoJuke."
 														   delegate:nil
 												  cancelButtonTitle:@"OK"
 												  otherButtonTitles:nil];
