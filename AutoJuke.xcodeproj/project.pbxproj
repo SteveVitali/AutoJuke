@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11A00749188B275A005EDDDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A00748188B275A005EDDDF /* CoreLocation.framework */; };
+		11A0074B188B2762005EDDDF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A0074A188B2762005EDDDF /* libz.dylib */; };
+		11A0074D188B276E005EDDDF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A0074C188B276E005EDDDF /* MobileCoreServices.framework */; };
+		11A0074F188B2774005EDDDF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A0074E188B2773005EDDDF /* QuartzCore.framework */; };
+		11A00751188B277E005EDDDF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A00750188B277E005EDDDF /* StoreKit.framework */; };
+		11A00753188B29A1005EDDDF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A00752188B29A1005EDDDF /* Parse.framework */; };
+		11A00755188B2B57005EDDDF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A00754188B2B57005EDDDF /* FacebookSDK.framework */; };
 		11F963D1188AF4330051FC0C /* CreatePlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */; };
 		11F963DB188AF53D0051FC0C /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963DA188AF53D0051FC0C /* Playlist.m */; };
 		11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */; };
@@ -50,6 +57,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11A00748188B275A005EDDDF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		11A0074A188B2762005EDDDF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		11A0074C188B276E005EDDDF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		11A0074E188B2773005EDDDF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		11A00750188B277E005EDDDF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		11A00752188B29A1005EDDDF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		11A00754188B2B57005EDDDF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		11F963CF188AF4330051FC0C /* CreatePlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreatePlaylistViewController.h; path = ../CreatePlaylistViewController.h; sourceTree = "<group>"; };
 		11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreatePlaylistViewController.m; path = ../CreatePlaylistViewController.m; sourceTree = "<group>"; };
 		11F963D9188AF53D0051FC0C /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
@@ -137,7 +151,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11A00751188B277E005EDDDF /* StoreKit.framework in Frameworks */,
+				11A0074F188B2774005EDDDF /* QuartzCore.framework in Frameworks */,
+				11A0074D188B276E005EDDDF /* MobileCoreServices.framework in Frameworks */,
+				11A0074B188B2762005EDDDF /* libz.dylib in Frameworks */,
+				11A00749188B275A005EDDDF /* CoreLocation.framework in Frameworks */,
+				11A00755188B2B57005EDDDF /* FacebookSDK.framework in Frameworks */,
 				BCA2DCB3188A4F2100667BB9 /* SystemConfiguration.framework in Frameworks */,
+				11A00753188B29A1005EDDDF /* Parse.framework in Frameworks */,
 				BCA2DCB1188A4F1A00667BB9 /* CFNetwork.framework in Frameworks */,
 				BCA2DCAF188A4F1400667BB9 /* libstdc++.dylib in Frameworks */,
 				BCA2DCAD188A4F0F00667BB9 /* CoreAudio.framework in Frameworks */,
@@ -243,6 +264,7 @@
 		BCA2DC3C188A4CF600667BB9 = {
 			isa = PBXGroup;
 			children = (
+				11A00752188B29A1005EDDDF /* Parse.framework */,
 				BCA2DC4E188A4CF600667BB9 /* AutoJuke */,
 				BCA2DC6D188A4CF600667BB9 /* AutoJukeTests */,
 				BCA2DC47188A4CF600667BB9 /* Frameworks */,
@@ -262,6 +284,12 @@
 		BCA2DC47188A4CF600667BB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11A00754188B2B57005EDDDF /* FacebookSDK.framework */,
+				11A00750188B277E005EDDDF /* StoreKit.framework */,
+				11A0074E188B2773005EDDDF /* QuartzCore.framework */,
+				11A0074C188B276E005EDDDF /* MobileCoreServices.framework */,
+				11A0074A188B2762005EDDDF /* libz.dylib */,
+				11A00748188B275A005EDDDF /* CoreLocation.framework */,
 				BC667626188AD63B008FACAF /* CocoaLibSpotify.a */,
 				BCA2DCB2188A4F2100667BB9 /* SystemConfiguration.framework */,
 				BCA2DCB0188A4F1A00667BB9 /* CFNetwork.framework */,
@@ -607,17 +635,23 @@
 		BCA2DC78188A4CF600667BB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = AutoJuke/AutoJuke.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/stevejohnvitali/Desktop/AutoJuke,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoJuke/AutoJuke-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "AutoJuke/AutoJuke-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -631,17 +665,23 @@
 		BCA2DC79188A4CF600667BB9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = AutoJuke/AutoJuke.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/stevejohnvitali/Desktop/AutoJuke,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoJuke/AutoJuke-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "AutoJuke/AutoJuke-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",

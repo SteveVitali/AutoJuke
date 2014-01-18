@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "CocoaLibSpotify.h"
 #import "ViewController.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
@@ -28,6 +29,10 @@
 	}
     
 	self.window.rootViewController = self.viewController;
+    
+    [Parse setApplicationId:@"Lwkw4PMt3tatJojVJkjSV9zLxtkA6wIh6q5yXuBl"
+                  clientKey:@"mIBC4cPOGGbOwKZcXaVdmAGabxDwGp4NuK1mRoGy"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     return YES;
 }
