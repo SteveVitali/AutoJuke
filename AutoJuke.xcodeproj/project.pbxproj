@@ -103,6 +103,13 @@
 		11E573E9188A3C7C00742422 /* SPUnknownPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUnknownPlaylist.h; sourceTree = "<group>"; };
 		11E573EA188A3C7C00742422 /* SPURLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPURLExtensions.h; sourceTree = "<group>"; };
 		11E573EB188A3C7C00742422 /* SPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUser.h; sourceTree = "<group>"; };
+		11E573EC188A3CE400742422 /* SPClientUpsellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPClientUpsellViewController.h; sourceTree = "<group>"; };
+		11E573ED188A3CE400742422 /* SPFacebookPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFacebookPermissionsViewController.h; sourceTree = "<group>"; };
+		11E573EE188A3CE400742422 /* SPLicenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLicenseViewController.h; sourceTree = "<group>"; };
+		11E573EF188A3CE400742422 /* SPLoginLogicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLoginLogicViewController.h; sourceTree = "<group>"; };
+		11E573F0188A3CE400742422 /* SPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLoginViewController.h; sourceTree = "<group>"; };
+		11E573F1188A3CE400742422 /* SPLoginViewControllerInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLoginViewControllerInternal.h; sourceTree = "<group>"; };
+		11E573F2188A3CE400742422 /* SPSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSignupViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +230,13 @@
 		11E573AB188A3A6000742422 /* cocoaLibSpotify */ = {
 			isa = PBXGroup;
 			children = (
+				11E573EC188A3CE400742422 /* SPClientUpsellViewController.h */,
+				11E573ED188A3CE400742422 /* SPFacebookPermissionsViewController.h */,
+				11E573EE188A3CE400742422 /* SPLicenseViewController.h */,
+				11E573EF188A3CE400742422 /* SPLoginLogicViewController.h */,
+				11E573F0188A3CE400742422 /* SPLoginViewController.h */,
+				11E573F1188A3CE400742422 /* SPLoginViewControllerInternal.h */,
+				11E573F2188A3CE400742422 /* SPSignupViewController.h */,
 				11E573CD188A3C7C00742422 /* CocoaLibSpotify.h */,
 				11E573CE188A3C7C00742422 /* CocoaLibSpotifyPlatformImports.h */,
 				11E573CF188A3C7C00742422 /* SPAlbum.h */,
