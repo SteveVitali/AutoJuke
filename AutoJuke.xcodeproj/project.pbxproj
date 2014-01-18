@@ -145,6 +145,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC2AE8C6188A943300516469 /* SP */ = {
+			isa = PBXGroup;
+			children = (
+				BCA2DC7E188A4E5400667BB9 /* SPClientUpsellViewController.h */,
+				BCA2DC7F188A4E5400667BB9 /* SPFacebookPermissionsViewController.h */,
+				BCA2DC80188A4E5400667BB9 /* SPLicenseViewController.h */,
+				BCA2DC81188A4E5400667BB9 /* SPLoginLogicViewController.h */,
+				BCA2DC82188A4E5400667BB9 /* SPLoginViewController.h */,
+				BCA2DC83188A4E5400667BB9 /* SPLoginViewControllerInternal.h */,
+				BCA2DC84188A4E5400667BB9 /* SPSignupViewController.h */,
+				BCA2DC87188A4E5400667BB9 /* SPAlbum.h */,
+				BCA2DC88188A4E5400667BB9 /* SPAlbumBrowse.h */,
+				BCA2DC89188A4E5400667BB9 /* SPArtist.h */,
+				BCA2DC8A188A4E5400667BB9 /* SPArtistBrowse.h */,
+				BCA2DC8B188A4E5400667BB9 /* SPAsyncLoading.h */,
+				BCA2DC8C188A4E5400667BB9 /* SPCircularBuffer.h */,
+				BCA2DC8D188A4E5400667BB9 /* SPCommon.h */,
+				BCA2DC8E188A4E5400667BB9 /* SPCoreAudioController.h */,
+				BCA2DC8F188A4E5400667BB9 /* SPErrorExtensions.h */,
+				BCA2DC90188A4E5400667BB9 /* SPImage.h */,
+				BCA2DC91188A4E5400667BB9 /* SPPlaybackManager.h */,
+				BCA2DC92188A4E5400667BB9 /* SPPlaylist.h */,
+				BCA2DC93188A4E5400667BB9 /* SPPlaylistContainer.h */,
+				BCA2DC94188A4E5400667BB9 /* SPPlaylistContainerInternal.h */,
+				BCA2DC95188A4E5400667BB9 /* SPPlaylistFolder.h */,
+				BCA2DC96188A4E5400667BB9 /* SPPlaylistFolderInternal.h */,
+				BCA2DC97188A4E5400667BB9 /* SPPlaylistInternal.h */,
+				BCA2DC98188A4E5400667BB9 /* SPPlaylistItem.h */,
+				BCA2DC99188A4E5400667BB9 /* SPPlaylistItemInternal.h */,
+				BCA2DC9A188A4E5400667BB9 /* SPPostTracksToInboxOperation.h */,
+				BCA2DC9B188A4E5400667BB9 /* SPSearch.h */,
+				BCA2DC9C188A4E5400667BB9 /* SPSession.h */,
+				BCA2DC9D188A4E5400667BB9 /* SPSessionInternal.h */,
+				BCA2DC9E188A4E5400667BB9 /* SPToplist.h */,
+				BCA2DC9F188A4E5400667BB9 /* SPTrack.h */,
+				BCA2DCA0188A4E5400667BB9 /* SPTrackInternal.h */,
+				BCA2DCA1188A4E5400667BB9 /* SPUnknownPlaylist.h */,
+				BCA2DCA2188A4E5400667BB9 /* SPURLExtensions.h */,
+				BCA2DCA3188A4E5400667BB9 /* SPUser.h */,
+			);
+			name = SP;
+			sourceTree = "<group>";
+		};
 		BCA2DC3C188A4CF600667BB9 = {
 			isa = PBXGroup;
 			children = (
@@ -231,45 +274,10 @@
 		BCA2DC7D188A4E4000667BB9 /* cocoaLibSpotify */ = {
 			isa = PBXGroup;
 			children = (
+				BC2AE8C6188A943300516469 /* SP */,
 				BCA2DCA5188A4EA100667BB9 /* appkey.c */,
-				BCA2DC7E188A4E5400667BB9 /* SPClientUpsellViewController.h */,
-				BCA2DC7F188A4E5400667BB9 /* SPFacebookPermissionsViewController.h */,
-				BCA2DC80188A4E5400667BB9 /* SPLicenseViewController.h */,
-				BCA2DC81188A4E5400667BB9 /* SPLoginLogicViewController.h */,
-				BCA2DC82188A4E5400667BB9 /* SPLoginViewController.h */,
-				BCA2DC83188A4E5400667BB9 /* SPLoginViewControllerInternal.h */,
-				BCA2DC84188A4E5400667BB9 /* SPSignupViewController.h */,
 				BCA2DC85188A4E5400667BB9 /* CocoaLibSpotify.h */,
 				BCA2DC86188A4E5400667BB9 /* CocoaLibSpotifyPlatformImports.h */,
-				BCA2DC87188A4E5400667BB9 /* SPAlbum.h */,
-				BCA2DC88188A4E5400667BB9 /* SPAlbumBrowse.h */,
-				BCA2DC89188A4E5400667BB9 /* SPArtist.h */,
-				BCA2DC8A188A4E5400667BB9 /* SPArtistBrowse.h */,
-				BCA2DC8B188A4E5400667BB9 /* SPAsyncLoading.h */,
-				BCA2DC8C188A4E5400667BB9 /* SPCircularBuffer.h */,
-				BCA2DC8D188A4E5400667BB9 /* SPCommon.h */,
-				BCA2DC8E188A4E5400667BB9 /* SPCoreAudioController.h */,
-				BCA2DC8F188A4E5400667BB9 /* SPErrorExtensions.h */,
-				BCA2DC90188A4E5400667BB9 /* SPImage.h */,
-				BCA2DC91188A4E5400667BB9 /* SPPlaybackManager.h */,
-				BCA2DC92188A4E5400667BB9 /* SPPlaylist.h */,
-				BCA2DC93188A4E5400667BB9 /* SPPlaylistContainer.h */,
-				BCA2DC94188A4E5400667BB9 /* SPPlaylistContainerInternal.h */,
-				BCA2DC95188A4E5400667BB9 /* SPPlaylistFolder.h */,
-				BCA2DC96188A4E5400667BB9 /* SPPlaylistFolderInternal.h */,
-				BCA2DC97188A4E5400667BB9 /* SPPlaylistInternal.h */,
-				BCA2DC98188A4E5400667BB9 /* SPPlaylistItem.h */,
-				BCA2DC99188A4E5400667BB9 /* SPPlaylistItemInternal.h */,
-				BCA2DC9A188A4E5400667BB9 /* SPPostTracksToInboxOperation.h */,
-				BCA2DC9B188A4E5400667BB9 /* SPSearch.h */,
-				BCA2DC9C188A4E5400667BB9 /* SPSession.h */,
-				BCA2DC9D188A4E5400667BB9 /* SPSessionInternal.h */,
-				BCA2DC9E188A4E5400667BB9 /* SPToplist.h */,
-				BCA2DC9F188A4E5400667BB9 /* SPTrack.h */,
-				BCA2DCA0188A4E5400667BB9 /* SPTrackInternal.h */,
-				BCA2DCA1188A4E5400667BB9 /* SPUnknownPlaylist.h */,
-				BCA2DCA2188A4E5400667BB9 /* SPURLExtensions.h */,
-				BCA2DCA3188A4E5400667BB9 /* SPUser.h */,
 				BCA2DCA4188A4E5400667BB9 /* api.h */,
 			);
 			name = cocoaLibSpotify;
