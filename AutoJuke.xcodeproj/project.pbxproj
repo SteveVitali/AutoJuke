@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC5DF596188AB95C00845C4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA2DC5A188A4CF600667BB9 /* Main.storyboard */; };
+		BCA04244188ABB3E002630ED /* CocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA04243188ABB3E002630ED /* CocoaLibSpotify.a */; };
 		BCA2DC49188A4CF600667BB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DC48188A4CF600667BB9 /* Foundation.framework */; };
 		BCA2DC4B188A4CF600667BB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DC4A188A4CF600667BB9 /* CoreGraphics.framework */; };
 		BCA2DC4D188A4CF600667BB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DC4C188A4CF600667BB9 /* UIKit.framework */; };
 		BCA2DC53188A4CF600667BB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCA2DC51188A4CF600667BB9 /* InfoPlist.strings */; };
 		BCA2DC55188A4CF600667BB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA2DC54188A4CF600667BB9 /* main.m */; };
 		BCA2DC59188A4CF600667BB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA2DC58188A4CF600667BB9 /* AppDelegate.m */; };
-		BCA2DC5C188A4CF600667BB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA2DC5A188A4CF600667BB9 /* Main.storyboard */; };
 		BCA2DC5F188A4CF600667BB9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA2DC5E188A4CF600667BB9 /* ViewController.m */; };
 		BCA2DC61188A4CF600667BB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA2DC60188A4CF600667BB9 /* Images.xcassets */; };
 		BCA2DC68188A4CF600667BB9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DC67188A4CF600667BB9 /* XCTest.framework */; };
@@ -28,8 +29,9 @@
 		BCA2DCAF188A4F1400667BB9 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DCAE188A4F1400667BB9 /* libstdc++.dylib */; };
 		BCA2DCB1188A4F1A00667BB9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DCB0188A4F1A00667BB9 /* CFNetwork.framework */; };
 		BCA2DCB3188A4F2100667BB9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DCB2188A4F2100667BB9 /* SystemConfiguration.framework */; };
-		BCA2DCB5188A4F3C00667BB9 /* CocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DCB4188A4F3C00667BB9 /* CocoaLibSpotify.a */; };
 		BCA2DCB7188A4F4300667BB9 /* SPLoginResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BCA2DCB6188A4F4300667BB9 /* SPLoginResources.bundle */; };
+		BCDC0631188A850500F01D35 /* glyphicons_000_glass.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDC0425188A850000F01D35 /* glyphicons_000_glass.png */; };
+		BCDC0637188A850500F01D35 /* glyphicons_006_user_add.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDC042B188A850000F01D35 /* glyphicons_006_user_add.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,7 +125,7 @@
 				BCA2DCB1188A4F1A00667BB9 /* CFNetwork.framework in Frameworks */,
 				BCA2DCAF188A4F1400667BB9 /* libstdc++.dylib in Frameworks */,
 				BCA2DCAD188A4F0F00667BB9 /* CoreAudio.framework in Frameworks */,
-				BCA2DCB5188A4F3C00667BB9 /* CocoaLibSpotify.a in Frameworks */,
+				BCA04244188ABB3E002630ED /* CocoaLibSpotify.a in Frameworks */,
 				BCA2DCAB188A4F0700667BB9 /* AudioToolbox.framework in Frameworks */,
 				BCA2DCA9188A4F0000667BB9 /* AVFoundation.framework in Frameworks */,
 				BCA2DCA7188A4EFA00667BB9 /* Security.framework in Frameworks */,
@@ -285,6 +287,33 @@
 			name = cocoaLibSpotify;
 			sourceTree = "<group>";
 		};
+		BCDC041F188A84ED00F01D35 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				BCDC0420188A850000F01D35 /* glyphicons */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		BCDC0420188A850000F01D35 /* glyphicons */ = {
+			isa = PBXGroup;
+			children = (
+				BCDC0424188A850000F01D35 /* png */,
+			);
+			name = glyphicons;
+			path = glyphicons_free;
+			sourceTree = "<group>";
+		};
+		BCDC0424188A850000F01D35 /* png */ = {
+			isa = PBXGroup;
+			children = (
+				BCDC0425188A850000F01D35 /* glyphicons_000_glass.png */,
+				BCDC042B188A850000F01D35 /* glyphicons_006_user_add.png */,
+			);
+			name = png;
+			path = glyphicons/png;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,8 +399,10 @@
 			files = (
 				BCA2DC61188A4CF600667BB9 /* Images.xcassets in Resources */,
 				BCA2DC53188A4CF600667BB9 /* InfoPlist.strings in Resources */,
+				BCDC0631188A850500F01D35 /* glyphicons_000_glass.png in Resources */,
 				BCA2DCB7188A4F4300667BB9 /* SPLoginResources.bundle in Resources */,
-				BCA2DC5C188A4CF600667BB9 /* Main.storyboard in Resources */,
+				BC5DF596188AB95C00845C4F /* Main.storyboard in Resources */,
+				BCDC0637188A850500F01D35 /* glyphicons_006_user_add.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,11 +554,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoJuke/AutoJuke-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "AutoJuke/AutoJuke-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/playground/sandbox/libspotify/AutoJuke,
+					/Volumes/playground/sandbox/AutoJuke,
 				);
 				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = (
@@ -548,11 +580,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoJuke/AutoJuke-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "AutoJuke/AutoJuke-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/playground/sandbox/libspotify/AutoJuke,
+					/Volumes/playground/sandbox/AutoJuke,
 				);
 				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = (
