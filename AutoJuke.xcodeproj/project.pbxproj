@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC5DF596188AB95C00845C4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA2DC5A188A4CF600667BB9 /* Main.storyboard */; };
-		BCA04244188ABB3E002630ED /* CocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA04243188ABB3E002630ED /* CocoaLibSpotify.a */; };
+		BC66761F188ABF5D008FACAF /* CocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC66761E188ABF5D008FACAF /* CocoaLibSpotify.a */; };
 		BCA2DC49188A4CF600667BB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DC48188A4CF600667BB9 /* Foundation.framework */; };
 		BCA2DC4B188A4CF600667BB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DC4A188A4CF600667BB9 /* CoreGraphics.framework */; };
 		BCA2DC4D188A4CF600667BB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DC4C188A4CF600667BB9 /* UIKit.framework */; };
@@ -46,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		BC14F6E5188A98070064CFA1 /* AutoJuke.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AutoJuke.entitlements; sourceTree = "<group>"; };
+		BC66761E188ABF5D008FACAF /* CocoaLibSpotify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = CocoaLibSpotify.a; sourceTree = "<group>"; };
 		BCA2DC45188A4CF600667BB9 /* AutoJuke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoJuke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA2DC48188A4CF600667BB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BCA2DC4A188A4CF600667BB9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,8 +113,9 @@
 		BCA2DCAE188A4F1400667BB9 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		BCA2DCB0188A4F1A00667BB9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BCA2DCB2188A4F2100667BB9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		BCA2DCB4188A4F3C00667BB9 /* CocoaLibSpotify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = CocoaLibSpotify.a; sourceTree = "<group>"; };
 		BCA2DCB6188A4F4300667BB9 /* SPLoginResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SPLoginResources.bundle; path = ../SPLoginResources.bundle; sourceTree = "<group>"; };
+		BCDC0425188A850000F01D35 /* glyphicons_000_glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_000_glass.png; sourceTree = "<group>"; };
+		BCDC042B188A850000F01D35 /* glyphicons_006_user_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_006_user_add.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +127,8 @@
 				BCA2DCB1188A4F1A00667BB9 /* CFNetwork.framework in Frameworks */,
 				BCA2DCAF188A4F1400667BB9 /* libstdc++.dylib in Frameworks */,
 				BCA2DCAD188A4F0F00667BB9 /* CoreAudio.framework in Frameworks */,
-				BCA04244188ABB3E002630ED /* CocoaLibSpotify.a in Frameworks */,
 				BCA2DCAB188A4F0700667BB9 /* AudioToolbox.framework in Frameworks */,
+				BC66761F188ABF5D008FACAF /* CocoaLibSpotify.a in Frameworks */,
 				BCA2DCA9188A4F0000667BB9 /* AVFoundation.framework in Frameworks */,
 				BCA2DCA7188A4EFA00667BB9 /* Security.framework in Frameworks */,
 				BCA2DC4B188A4CF600667BB9 /* CoreGraphics.framework in Frameworks */,
@@ -213,7 +215,7 @@
 		BCA2DC47188A4CF600667BB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BCA2DCB4188A4F3C00667BB9 /* CocoaLibSpotify.a */,
+				BC66761E188ABF5D008FACAF /* CocoaLibSpotify.a */,
 				BCA2DCB2188A4F2100667BB9 /* SystemConfiguration.framework */,
 				BCA2DCB0188A4F1A00667BB9 /* CFNetwork.framework */,
 				BCA2DCAE188A4F1400667BB9 /* libstdc++.dylib */,
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				BC14F6E5188A98070064CFA1 /* AutoJuke.entitlements */,
+				BCDC041F188A84ED00F01D35 /* assets */,
 				BCA2DC7D188A4E4000667BB9 /* cocoaLibSpotify */,
 				BCA2DC57188A4CF600667BB9 /* AppDelegate.h */,
 				BCA2DC58188A4CF600667BB9 /* AppDelegate.m */,
@@ -490,6 +493,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -508,7 +512,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos7.0;
 			};
 			name = Debug;
 		};
@@ -529,6 +533,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -540,7 +545,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos7.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -552,15 +557,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = AutoJuke/AutoJuke.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoJuke/AutoJuke-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "AutoJuke/AutoJuke-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Volumes/playground/sandbox/AutoJuke,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -578,15 +581,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = AutoJuke/AutoJuke.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoJuke/AutoJuke-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "AutoJuke/AutoJuke-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Volumes/playground/sandbox/AutoJuke,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
