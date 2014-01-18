@@ -246,7 +246,6 @@
 		BCA2DC4F188A4CF600667BB9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BCA2DCB6188A4F4300667BB9 /* SPLoginResources.bundle */,
 				BCA2DC50188A4CF600667BB9 /* AutoJuke-Info.plist */,
 				BCA2DC51188A4CF600667BB9 /* InfoPlist.strings */,
 				BCA2DC54188A4CF600667BB9 /* main.m */,
@@ -276,6 +275,7 @@
 		BCA2DC7D188A4E4000667BB9 /* cocoaLibSpotify */ = {
 			isa = PBXGroup;
 			children = (
+				BCA2DCB6188A4F4300667BB9 /* SPLoginResources.bundle */,
 				BC2AE8C6188A943300516469 /* SP */,
 				BCA2DCA5188A4EA100667BB9 /* appkey.c */,
 				BCA2DC85188A4E5400667BB9 /* CocoaLibSpotify.h */,
