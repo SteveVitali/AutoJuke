@@ -29,7 +29,7 @@
 		11E57387188A20BF00742422 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E57386188A20BF00742422 /* AVFoundation.framework */; };
 		11E57389188A20C500742422 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E57388188A20C500742422 /* Security.framework */; };
 		11E573A6188A2DF200742422 /* SPLoginResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11E573A5188A2DF200742422 /* SPLoginResources.bundle */; };
-		11E573AA188A389F00742422 /* libCocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E573A9188A389F00742422 /* libCocoaLibSpotify.a */; };
+		11E573AA188A389F00742422 /* CocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E573A9188A389F00742422 /* CocoaLibSpotify.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,7 @@
 		11E57386188A20BF00742422 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		11E57388188A20C500742422 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		11E573A5188A2DF200742422 /* SPLoginResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SPLoginResources.bundle; sourceTree = "<group>"; };
-		11E573A9188A389F00742422 /* libCocoaLibSpotify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCocoaLibSpotify.a; sourceTree = "<group>"; };
+		11E573A9188A389F00742422 /* CocoaLibSpotify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = CocoaLibSpotify.a; sourceTree = "<group>"; };
 		11E573CC188A3C5600742422 /* api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = api.h; sourceTree = "<group>"; };
 		11E573CD188A3C7C00742422 /* CocoaLibSpotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLibSpotify.h; sourceTree = "<group>"; };
 		11E573CE188A3C7C00742422 /* CocoaLibSpotifyPlatformImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLibSpotifyPlatformImports.h; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 				11E57381188A20AD00742422 /* libstdc++.dylib in Frameworks */,
 				11E5737F188A20A400742422 /* CFNetwork.framework in Frameworks */,
 				11E5737D188A209E00742422 /* SystemConfiguration.framework in Frameworks */,
-				11E573AA188A389F00742422 /* libCocoaLibSpotify.a in Frameworks */,
+				11E573AA188A389F00742422 /* CocoaLibSpotify.a in Frameworks */,
 				11E5734A188A206200742422 /* CoreGraphics.framework in Frameworks */,
 				11E5734C188A206200742422 /* UIKit.framework in Frameworks */,
 				11E57348188A206200742422 /* Foundation.framework in Frameworks */,
@@ -166,7 +166,7 @@
 		11E57346188A206200742422 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				11E573A9188A389F00742422 /* libCocoaLibSpotify.a */,
+				11E573A9188A389F00742422 /* CocoaLibSpotify.a */,
 				11E573A5188A2DF200742422 /* SPLoginResources.bundle */,
 				11E57388188A20C500742422 /* Security.framework */,
 				11E57386188A20BF00742422 /* AVFoundation.framework */,
@@ -508,10 +508,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoJuke/AutoJuke-Prefix.pch";
 				INFOPLIST_FILE = "AutoJuke/AutoJuke-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/stevejohnvitali/Desktop/AutoJuke,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -532,10 +529,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoJuke/AutoJuke-Prefix.pch";
 				INFOPLIST_FILE = "AutoJuke/AutoJuke-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/stevejohnvitali/Desktop/AutoJuke,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
