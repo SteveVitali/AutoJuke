@@ -71,7 +71,38 @@
 		11E57388188A20C500742422 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		11E573A5188A2DF200742422 /* SPLoginResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SPLoginResources.bundle; sourceTree = "<group>"; };
 		11E573A9188A389F00742422 /* libCocoaLibSpotify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCocoaLibSpotify.a; sourceTree = "<group>"; };
-		11E573AC188A3A9200742422 /* CocoaLibSpotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaLibSpotify.h; sourceTree = "<group>"; };
+		11E573CC188A3C5600742422 /* api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = api.h; sourceTree = "<group>"; };
+		11E573CD188A3C7C00742422 /* CocoaLibSpotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLibSpotify.h; sourceTree = "<group>"; };
+		11E573CE188A3C7C00742422 /* CocoaLibSpotifyPlatformImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLibSpotifyPlatformImports.h; sourceTree = "<group>"; };
+		11E573CF188A3C7C00742422 /* SPAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAlbum.h; sourceTree = "<group>"; };
+		11E573D0188A3C7C00742422 /* SPAlbumBrowse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAlbumBrowse.h; sourceTree = "<group>"; };
+		11E573D1188A3C7C00742422 /* SPArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPArtist.h; sourceTree = "<group>"; };
+		11E573D2188A3C7C00742422 /* SPArtistBrowse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPArtistBrowse.h; sourceTree = "<group>"; };
+		11E573D3188A3C7C00742422 /* SPAsyncLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAsyncLoading.h; sourceTree = "<group>"; };
+		11E573D4188A3C7C00742422 /* SPCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCircularBuffer.h; sourceTree = "<group>"; };
+		11E573D5188A3C7C00742422 /* SPCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCommon.h; sourceTree = "<group>"; };
+		11E573D6188A3C7C00742422 /* SPCoreAudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCoreAudioController.h; sourceTree = "<group>"; };
+		11E573D7188A3C7C00742422 /* SPErrorExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPErrorExtensions.h; sourceTree = "<group>"; };
+		11E573D8188A3C7C00742422 /* SPImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPImage.h; sourceTree = "<group>"; };
+		11E573D9188A3C7C00742422 /* SPPlaybackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaybackManager.h; sourceTree = "<group>"; };
+		11E573DA188A3C7C00742422 /* SPPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylist.h; sourceTree = "<group>"; };
+		11E573DB188A3C7C00742422 /* SPPlaylistContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylistContainer.h; sourceTree = "<group>"; };
+		11E573DC188A3C7C00742422 /* SPPlaylistContainerInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylistContainerInternal.h; sourceTree = "<group>"; };
+		11E573DD188A3C7C00742422 /* SPPlaylistFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylistFolder.h; sourceTree = "<group>"; };
+		11E573DE188A3C7C00742422 /* SPPlaylistFolderInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylistFolderInternal.h; sourceTree = "<group>"; };
+		11E573DF188A3C7C00742422 /* SPPlaylistInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylistInternal.h; sourceTree = "<group>"; };
+		11E573E0188A3C7C00742422 /* SPPlaylistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylistItem.h; sourceTree = "<group>"; };
+		11E573E1188A3C7C00742422 /* SPPlaylistItemInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylistItemInternal.h; sourceTree = "<group>"; };
+		11E573E2188A3C7C00742422 /* SPPostTracksToInboxOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPostTracksToInboxOperation.h; sourceTree = "<group>"; };
+		11E573E3188A3C7C00742422 /* SPSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSearch.h; sourceTree = "<group>"; };
+		11E573E4188A3C7C00742422 /* SPSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSession.h; sourceTree = "<group>"; };
+		11E573E5188A3C7C00742422 /* SPSessionInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSessionInternal.h; sourceTree = "<group>"; };
+		11E573E6188A3C7C00742422 /* SPToplist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPToplist.h; sourceTree = "<group>"; };
+		11E573E7188A3C7C00742422 /* SPTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTrack.h; sourceTree = "<group>"; };
+		11E573E8188A3C7C00742422 /* SPTrackInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTrackInternal.h; sourceTree = "<group>"; };
+		11E573E9188A3C7C00742422 /* SPUnknownPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUnknownPlaylist.h; sourceTree = "<group>"; };
+		11E573EA188A3C7C00742422 /* SPURLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPURLExtensions.h; sourceTree = "<group>"; };
+		11E573EB188A3C7C00742422 /* SPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,7 +223,38 @@
 		11E573AB188A3A6000742422 /* cocoaLibSpotify */ = {
 			isa = PBXGroup;
 			children = (
-				11E573AC188A3A9200742422 /* CocoaLibSpotify.h */,
+				11E573CD188A3C7C00742422 /* CocoaLibSpotify.h */,
+				11E573CE188A3C7C00742422 /* CocoaLibSpotifyPlatformImports.h */,
+				11E573CF188A3C7C00742422 /* SPAlbum.h */,
+				11E573D0188A3C7C00742422 /* SPAlbumBrowse.h */,
+				11E573D1188A3C7C00742422 /* SPArtist.h */,
+				11E573D2188A3C7C00742422 /* SPArtistBrowse.h */,
+				11E573D3188A3C7C00742422 /* SPAsyncLoading.h */,
+				11E573D4188A3C7C00742422 /* SPCircularBuffer.h */,
+				11E573D5188A3C7C00742422 /* SPCommon.h */,
+				11E573D6188A3C7C00742422 /* SPCoreAudioController.h */,
+				11E573D7188A3C7C00742422 /* SPErrorExtensions.h */,
+				11E573D8188A3C7C00742422 /* SPImage.h */,
+				11E573D9188A3C7C00742422 /* SPPlaybackManager.h */,
+				11E573DA188A3C7C00742422 /* SPPlaylist.h */,
+				11E573DB188A3C7C00742422 /* SPPlaylistContainer.h */,
+				11E573DC188A3C7C00742422 /* SPPlaylistContainerInternal.h */,
+				11E573DD188A3C7C00742422 /* SPPlaylistFolder.h */,
+				11E573DE188A3C7C00742422 /* SPPlaylistFolderInternal.h */,
+				11E573DF188A3C7C00742422 /* SPPlaylistInternal.h */,
+				11E573E0188A3C7C00742422 /* SPPlaylistItem.h */,
+				11E573E1188A3C7C00742422 /* SPPlaylistItemInternal.h */,
+				11E573E2188A3C7C00742422 /* SPPostTracksToInboxOperation.h */,
+				11E573E3188A3C7C00742422 /* SPSearch.h */,
+				11E573E4188A3C7C00742422 /* SPSession.h */,
+				11E573E5188A3C7C00742422 /* SPSessionInternal.h */,
+				11E573E6188A3C7C00742422 /* SPToplist.h */,
+				11E573E7188A3C7C00742422 /* SPTrack.h */,
+				11E573E8188A3C7C00742422 /* SPTrackInternal.h */,
+				11E573E9188A3C7C00742422 /* SPUnknownPlaylist.h */,
+				11E573EA188A3C7C00742422 /* SPURLExtensions.h */,
+				11E573EB188A3C7C00742422 /* SPUser.h */,
+				11E573CC188A3C5600742422 /* api.h */,
 			);
 			name = cocoaLibSpotify;
 			sourceTree = "<group>";
