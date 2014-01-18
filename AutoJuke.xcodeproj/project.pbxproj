@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		11F963D1188AF4330051FC0C /* CreatePlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */; };
 		11F963DB188AF53D0051FC0C /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963DA188AF53D0051FC0C /* Playlist.m */; };
-		11F963DE188AF5AE0051FC0C /* ViewPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963DD188AF5AE0051FC0C /* ViewPlaylistViewController.m */; };
 		11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */; };
 		11F963E8188B00290051FC0C /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F963E7188B00290051FC0C /* MainWindow_iPhone.xib */; };
+		11F963EB188B114C0051FC0C /* PlaylistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963EA188B114C0051FC0C /* PlaylistTableViewController.m */; };
 		BC5DF596188AB95C00845C4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA2DC5A188A4CF600667BB9 /* Main.storyboard */; };
 		BC667627188AD63B008FACAF /* CocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC667626188AD63B008FACAF /* CocoaLibSpotify.a */; };
 		BCA2DC49188A4CF600667BB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DC48188A4CF600667BB9 /* Foundation.framework */; };
@@ -54,11 +54,11 @@
 		11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreatePlaylistViewController.m; path = ../CreatePlaylistViewController.m; sourceTree = "<group>"; };
 		11F963D9188AF53D0051FC0C /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
 		11F963DA188AF53D0051FC0C /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
-		11F963DC188AF5AE0051FC0C /* ViewPlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPlaylistViewController.h; sourceTree = "<group>"; };
-		11F963DD188AF5AE0051FC0C /* ViewPlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPlaylistViewController.m; sourceTree = "<group>"; };
 		11F963E2188AF8D10051FC0C /* JoinPlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinPlaylistViewController.h; sourceTree = "<group>"; };
 		11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinPlaylistViewController.m; sourceTree = "<group>"; };
 		11F963E7188B00290051FC0C /* MainWindow_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		11F963E9188B114C0051FC0C /* PlaylistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTableViewController.h; sourceTree = "<group>"; };
+		11F963EA188B114C0051FC0C /* PlaylistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableViewController.m; sourceTree = "<group>"; };
 		BC14F6E5188A98070064CFA1 /* AutoJuke.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AutoJuke.entitlements; sourceTree = "<group>"; };
 		BC667626188AD63B008FACAF /* CocoaLibSpotify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = CocoaLibSpotify.a; sourceTree = "<group>"; };
 		BCA2DC45188A4CF600667BB9 /* AutoJuke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoJuke.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,10 +171,10 @@
 				BCA2DC5E188A4CF600667BB9 /* ViewController.m */,
 				11F963CF188AF4330051FC0C /* CreatePlaylistViewController.h */,
 				11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */,
-				11F963DC188AF5AE0051FC0C /* ViewPlaylistViewController.h */,
-				11F963DD188AF5AE0051FC0C /* ViewPlaylistViewController.m */,
 				11F963E2188AF8D10051FC0C /* JoinPlaylistViewController.h */,
 				11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */,
+				11F963E9188B114C0051FC0C /* PlaylistTableViewController.h */,
+				11F963EA188B114C0051FC0C /* PlaylistTableViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -473,10 +473,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCA2DC5F188A4CF600667BB9 /* ViewController.m in Sources */,
+				11F963EB188B114C0051FC0C /* PlaylistTableViewController.m in Sources */,
 				11F963DB188AF53D0051FC0C /* Playlist.m in Sources */,
 				BCA2DC59188A4CF600667BB9 /* AppDelegate.m in Sources */,
 				11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */,
-				11F963DE188AF5AE0051FC0C /* ViewPlaylistViewController.m in Sources */,
 				11F963D1188AF4330051FC0C /* CreatePlaylistViewController.m in Sources */,
 				BCA2DC55188A4CF600667BB9 /* main.m in Sources */,
 			);

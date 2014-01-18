@@ -7,7 +7,7 @@
 //
 
 #import "CreatePlaylistViewController.h"
-#import "ViewPlaylistViewController.h"
+#import "PlaylistTableViewController.h"
 
 @interface CreatePlaylistViewController ()
 
@@ -38,8 +38,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if([segue.identifier isEqualToString:@"viewPlaylistSegue"]) {
-        ViewPlaylistViewController *controller =
-        (ViewPlaylistViewController *)[segue destinationViewController];
+        PlaylistTableViewController *controller =
+        (PlaylistTableViewController *)[segue destinationViewController];
         controller.playlist.name = self.nameField.text;
     }
 }

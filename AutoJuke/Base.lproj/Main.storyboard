@@ -135,29 +135,39 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="f6C-JD-ywj" id="Aee-RG-dLh"/>
-                        <segue destination="Mx7-6p-4B0" kind="push" identifier="createPlaylistSegue" id="l2E-De-i4V"/>
+                        <segue destination="dyM-Wk-KfT" kind="push" identifier="createPlaylistSegue" id="QDC-ot-ZW1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhB-UU-McI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="755" y="-415"/>
         </scene>
-        <!--View Playlist View Controller-->
-        <scene sceneID="zfl-9g-Tfi">
+        <!--Playlist Table View Controller-->
+        <scene sceneID="D4v-HN-oxv">
             <objects>
-                <viewController id="Mx7-6p-4B0" customClass="ViewPlaylistViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="znY-X4-iot"/>
-                        <viewControllerLayoutGuide type="bottom" id="b0w-9K-lxs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kqE-cm-dft">
+                <tableViewController id="dyM-Wk-KfT" customClass="PlaylistTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vmR-iA-w01">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Gd6-sF-bYv"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="luL-fu-7Iu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="YAm-2q-Ema">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YAm-2q-Ema" id="ErQ-xW-Mhy">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dyM-Wk-KfT" id="7UO-9p-YKd"/>
+                            <outlet property="delegate" destination="dyM-Wk-KfT" id="s4u-wN-HG7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="f1H-Wf-4TI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g7l-VF-rE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1178" y="-415"/>
         </scene>
