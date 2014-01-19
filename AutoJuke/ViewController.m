@@ -10,6 +10,11 @@
 #import "CreatePlaylistViewController.h"
 #import "JoinPlaylistViewController.h"
 #import <Parse/Parse.h>
+#import "FUIButton.h"
+#import "UIColor+FlatUI.h"
+#import "UIFont+FlatUI.h"
+#import "UINavigationBar+FlatUI.h"
+#import "UIBarButtonItem+FlatUI.h"
 
 @interface ViewController ()
 
@@ -22,6 +27,21 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    self.hostButton.buttonColor = [UIColor turquoiseColor];
+    self.hostButton.shadowColor = [UIColor greenSeaColor];
+    self.hostButton.shadowHeight = 3.0f;
+    self.hostButton.cornerRadius = 6.0f;
+    self.hostButton.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    [self.hostButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    [self.hostButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+    
+    self.joinButton.buttonColor = [UIColor turquoiseColor];
+    self.joinButton.shadowColor = [UIColor greenSeaColor];
+    self.joinButton.shadowHeight = 3.0f;
+    self.joinButton.cornerRadius = 6.0f;
+    self.joinButton.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    [self.joinButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    [self.joinButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning

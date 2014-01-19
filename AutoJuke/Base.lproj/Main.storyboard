@@ -10,8 +10,8 @@
             <objects>
                 <viewController storyboardIdentifier="InitialViewController" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="AZk-am-xo2"/>
-                        <viewControllerLayoutGuide type="bottom" id="JhS-Xu-yJM"/>
+                        <viewControllerLayoutGuide type="top" id="2kG-gF-Sy2"/>
+                        <viewControllerLayoutGuide type="bottom" id="bFS-p3-Djn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -24,10 +24,9 @@
                                 <color key="textColor" red="0.0" green="0.16862745100000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUr-75-kuk">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUr-75-kuk" customClass="FUIButton">
                                 <rect key="frame" x="20" y="167" width="280" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="  Host" image="glyphicons_000_glass.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,10 +35,9 @@
                                     <action selector="didPressHostButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qz2-9D-UGL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYx-Ov-JbJ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYx-Ov-JbJ" customClass="FUIButton">
                                 <rect key="frame" x="20" y="268" width="280" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="  Join" image="glyphicons_006_user_add.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,6 +51,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="AutoJuke" id="ypu-Is-7XL"/>
                     <connections>
+                        <outlet property="hostButton" destination="QUr-75-kuk" id="thD-Jw-bfa"/>
+                        <outlet property="joinButton" destination="IYx-Ov-JbJ" id="qWu-wk-KkK"/>
                         <segue destination="VUz-qn-3RC" kind="push" identifier="hostSegue" id="lqC-76-Vra"/>
                         <segue destination="aid-zE-vaV" kind="push" identifier="joinSegue" id="sXn-fV-HPA"/>
                     </connections>
@@ -66,8 +66,8 @@
             <objects>
                 <viewController id="aid-zE-vaV" customClass="JoinPlaylistViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bke-wT-fQ0"/>
-                        <viewControllerLayoutGuide type="bottom" id="uUc-Zr-L0m"/>
+                        <viewControllerLayoutGuide type="top" id="Tdi-Pa-gxF"/>
+                        <viewControllerLayoutGuide type="bottom" id="BaA-w6-ujW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SyO-Gg-lxJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -145,8 +145,8 @@
             <objects>
                 <viewController id="rJS-cm-sMv" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JfL-B3-sZf"/>
-                        <viewControllerLayoutGuide type="bottom" id="FIN-qt-EBw"/>
+                        <viewControllerLayoutGuide type="top" id="NRV-ZQ-RSo"/>
+                        <viewControllerLayoutGuide type="bottom" id="hPG-RT-q2s"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rsi-KN-SbX" customClass="AddSongsViewController">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -163,8 +163,8 @@
             <objects>
                 <viewController id="VUz-qn-3RC" customClass="CreatePlaylistViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SCn-z4-wll"/>
-                        <viewControllerLayoutGuide type="bottom" id="btV-hz-4Bo"/>
+                        <viewControllerLayoutGuide type="top" id="tUa-Zm-Nmz"/>
+                        <viewControllerLayoutGuide type="bottom" id="wyh-uj-2BG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JRo-yH-ggV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
