@@ -131,7 +131,7 @@
                     <navigationItem key="navigationItem" id="bpd-HF-9uB">
                         <barButtonItem key="rightBarButtonItem" title="Add Songs" id="9L9-kr-ovP">
                             <connections>
-                                <segue destination="ODZ-jj-tcI" kind="push" identifier="addSongsSegue" id="eGc-8h-gmi"/>
+                                <segue destination="Tcd-z7-85B" kind="modal" id="3Db-f8-ktV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -149,7 +149,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IIG-Hr-NhE">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PickerCell" id="IIG-Hr-NhE">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IIG-Hr-NhE" id="Q25-M2-uUw">
@@ -163,11 +163,17 @@
                             <outlet property="delegate" destination="ODZ-jj-tcI" id="ydn-n8-SWl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="GLO-h1-xkg"/>
+                    <navigationItem key="navigationItem" id="GLO-h1-xkg">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="o1d-a1-QBm">
+                            <connections>
+                                <action selector="didPressDone:" destination="ODZ-jj-tcI" id="dkQ-BL-Afi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLk-l5-bMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1585" y="703"/>
+            <point key="canvasLocation" x="2023" y="703"/>
         </scene>
         <!--Create Playlist View Controller-->
         <scene sceneID="RsD-Sk-tDc">
@@ -376,6 +382,7 @@
         <!--Table View Controller-->
         <scene sceneID="c3t-LJ-8kf">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ah3-Qz-pQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="D1v-YF-ixX" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0w3-oa-oF4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -397,8 +404,26 @@
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ah3-Qz-pQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="217" y="618"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="11c-f3-cN2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tcd-z7-85B" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xrd-cr-iWF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ODZ-jj-tcI" kind="relationship" relationship="rootViewController" id="UVI-FL-9eM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNo-3o-9eL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1595" y="703"/>
         </scene>
     </scenes>
     <resources>

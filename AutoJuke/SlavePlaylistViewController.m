@@ -43,6 +43,65 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)addPlaylistsFromController:(PlaylistPickerViewController *)pickerController {
+    
+    NSLog(@"THIS RUNS");
+    NSMutableArray *playlists = [[NSMutableArray alloc] initWithCapacity:pickerController.playlistItems.count];
+    for(int i=0; i<pickerController.playlistItems.count; i++) {
+        SPPlaylist *tempList = [pickerController.playlistItems objectAtIndex:i];
+        [playlists addObject:tempList];
+    }
+    NSArray *playlistItems = [playlists valueForKeyPath:@"@unionOfArrays.items"];
+    NSLog(@"asdfasdfasdf %@",playlistItems);
+    //NSArray *tracks = [self tracksFromPlaylistItems:playlistItems];
+/*
+    [SPAsyncLoading waitUntilLoaded:tracks timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedTracks, NSArray *notLoadedTracks) {
+        
+        // All of our tracks have loaded their metadata. Hooray!
+        NSLog(@"[%@ %@]: %@ of %@ tracks loaded.", NSStringFromClass([self class]), NSStringFromSelector(_cmd),
+              [NSNumber numberWithInteger:loadedTracks.count], [NSNumber numberWithInteger:loadedTracks.count + notLoadedTracks.count]);
+        
+        NSMutableArray *theTrackPool = [NSMutableArray arrayWithCapacity:loadedTracks.count];
+        
+        for (SPTrack *aTrack in loadedTracks) {
+            if (aTrack.availability == SP_TRACK_AVAILABILITY_AVAILABLE && [aTrack.name length] > 0)
+                [theTrackPool addObject:aTrack];
+        }
+        
+        self.playlist.songs = [NSMutableArray arrayWithArray:[[NSSet setWithArray:theTrackPool] allObjects]];
+        // ^ Thin out duplicates.
+        
+        //[self startNewRound];
+        NSLog(@"there are %d items in the tracks list",self.playlist.songs.count);
+        for(int i=0; i<[self.playlist.songs count]; i++) {
+            
+            SPTrack *test = [self.playlist.songs objectAtIndex:i];
+            if (test.isLocal) {
+                [self.playlist.songs removeObjectAtIndex:i];
+            }
+        }
+        NSLog(@"your user name is %@",[[SPSession sharedSession] user].canonicalName);
+        
+        [self.tableView reloadData];
+        
+        self.playlist.songTitles = [[NSMutableArray alloc] init];
+        self.playlist.songURIs  = [[NSMutableArray alloc] init];
+        
+        for(int i=0; i<self.playlist.songs.count; i++) {
+            
+            SPTrack *track = [self.playlist.songs objectAtIndex:i];
+            [self.playlist.songTitles addObject:track.name];
+            [self.playlist.songURIs addObject:track.spotifyURL.absoluteString];
+        }
+        [self addPlaylistToDatabase];
+        NSLog(@"what is thiasdfasdfs help %@",[[SPSession sharedSession] userPlaylists].playlists);
+        
+    }];
+ */
+
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -55,7 +114,6 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"something something: %d", [self.playlist.songTitles count]);
     return [self.playlist.songTitles count];
 }
 

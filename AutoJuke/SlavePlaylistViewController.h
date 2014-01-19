@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Playlist.h"
+#import "PlaylistPickerViewController.h"
 
-@interface SlavePlaylistViewController : UITableViewController
+@interface SlavePlaylistViewController : UITableViewController <PlaylistPickerDelegate>
 
 @property Playlist *playlist;
+
+- (void)addPlaylistsFromController:(PlaylistPickerViewController *)pickerController;
 
 @end
