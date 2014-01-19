@@ -11,7 +11,7 @@
 
 @interface PlaylistPickerItem : NSObject
 
-@property BOOL completed;
+@property BOOL chosen;
 @property SPPlaylist *playlist;
 
 - (id)initWithPlaylist:(SPPlaylist *)playlist;

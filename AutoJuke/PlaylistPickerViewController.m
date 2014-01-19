@@ -33,11 +33,6 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    
-    UINavigationController *navigationController = (UINavigationController *)[self parentViewController];
-    self.delegate = (id<PlaylistPickerDelegate>)[navigationController parentViewController];
-    NSLog(@"delegate: %@",self.delegate);
-
 
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.chosenPlaylists = [[NSMutableArray alloc] init];
@@ -53,9 +48,14 @@
 
 - (void)addPlaylistsFromController:(PlaylistPickerViewController *)pickerController {
     
+    for (PlaylistPickerItem *pickerItem in self.playlistItems) {
+        
+        if (pickerItem.chosen) {
+            [self.chosenPlaylists addObject:pickerItem.playlist];
+        }
+    }
     [self.delegate addPlaylistsFromController:self];
 }
-
 
 #pragma mark - Table view data source
 
@@ -80,7 +80,7 @@
     PlaylistPickerItem *tempItem = [self.playlistItems objectAtIndex:indexPath.row];
     cell.textLabel.text = tempItem.playlist.name;
     
-    if (tempItem.completed) {
+    if (tempItem.chosen) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -92,9 +92,8 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     PlaylistPickerItem *tappedItem = [self.playlistItems objectAtIndex:indexPath.row];
-    tappedItem.completed = !tappedItem.completed;
+    tappedItem.chosen = !tappedItem.chosen;
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    
     
 }
 

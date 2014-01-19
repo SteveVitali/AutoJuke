@@ -131,7 +131,7 @@
                     <navigationItem key="navigationItem" id="bpd-HF-9uB">
                         <barButtonItem key="rightBarButtonItem" title="Add Songs" id="9L9-kr-ovP">
                             <connections>
-                                <segue destination="Tcd-z7-85B" kind="modal" id="3Db-f8-ktV"/>
+                                <segue destination="Tcd-z7-85B" kind="modal" identifier="createPlaylistSegue" id="3Db-f8-ktV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
