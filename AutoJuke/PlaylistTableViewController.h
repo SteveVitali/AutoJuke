@@ -10,8 +10,9 @@
 #import "Playlist.h"
 #import "CocoaLibSpotify.h"
 #import "PlaylistPickerViewController.h"
+#import "NowPlayingViewController.h"
 
-@interface PlaylistTableViewController : UITableViewController <UIApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate, SPPlaybackManagerDelegate, SPLoginViewControllerDelegate, PlaylistPickerDelegate> {
+@interface PlaylistTableViewController : UITableViewController <UIApplicationDelegate, SPSessionDelegate, SPLoginViewControllerDelegate, PlaylistPickerDelegate, NowPlayingDelegate> {
    
     UIViewController *_mainViewController;
 	UITextField *_trackURIField;
@@ -24,7 +25,6 @@
 }
 
 @property Playlist *playlist;
-
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 @property (nonatomic, strong) IBOutlet UIViewController *mainViewController;
@@ -40,5 +40,6 @@
 
 - (IBAction)setTrackPosition:(id)sender;
 - (IBAction)setVolume:(id)sender;
+- (NSURL *)getRandomTrackURI;
 
 @end

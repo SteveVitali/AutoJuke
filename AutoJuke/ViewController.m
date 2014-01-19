@@ -63,13 +63,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if([segue.identifier isEqualToString:@"hostSegue"]) {
-        CreatePlaylistViewController *controller =
-        (CreatePlaylistViewController *)[segue destinationViewController];
+   //     CreatePlaylistViewController *controller =
+   //     (CreatePlaylistViewController *)[segue destinationViewController];
         
     }
     else if([segue.identifier isEqualToString:@"joinSegue"]) {
-        JoinPlaylistViewController *controller =
-        (JoinPlaylistViewController *)[segue destinationViewController];
+    //    JoinPlaylistViewController *controller =
+    //    (JoinPlaylistViewController *)[segue destinationViewController];
         // other stuff
     }
 }
