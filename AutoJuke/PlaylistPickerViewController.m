@@ -1,19 +1,18 @@
 //
-//  SlavePlaylistViewController.m
+//  PlaylistPickerViewController.m
 //  AutoJuke
 //
 //  Created by Steve John Vitali on 1/18/14.
 //  Copyright (c) 2014 Point One. All rights reserved.
 //
 
-#import "SlavePlaylistViewController.h"
-#import "Playlist.h"
+#import "PlaylistPickerViewController.h"
 
-@interface SlavePlaylistViewController ()
+@interface PlaylistPickerViewController ()
 
 @end
 
-@implementation SlavePlaylistViewController
+@implementation PlaylistPickerViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,7 +32,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,16 +44,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"something something: %d", [self.playlist.songTitles count]);
-    return [self.playlist.songTitles count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,7 +62,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [self.playlist.songTitles objectAtIndex:indexPath.row];
     
     return cell;
 }
