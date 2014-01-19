@@ -115,8 +115,8 @@
         [playlist addUniqueObjectsFromArray:tempURIs forKey:@"songURIs"];
 
         [playlist saveInBackground];
-        
     }];
+    
 }
 
 -(NSArray *)tracksFromPlaylistItems:(NSArray *)items {

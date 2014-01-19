@@ -17,7 +17,6 @@
 		11A0075B188B2DA7005EDDDF /* LibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A00758188B2DA7005EDDDF /* LibraryAPI.m */; };
 		11A0075C188B2DA7005EDDDF /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0075A188B2DA7005EDDDF /* PersistencyManager.m */; };
 		11A0075F188B4AEB005EDDDF /* SlavePlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0075E188B4AEB005EDDDF /* SlavePlaylistViewController.m */; };
-		11A00763188B54F1005EDDDF /* AddSongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A00762188B54F1005EDDDF /* AddSongsViewController.m */; };
 		11A007CB188B7DB5005EDDDF /* FUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A007A6188B7DB5005EDDDF /* FUIAlertView.m */; };
 		11A007CC188B7DB5005EDDDF /* FUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A007A8188B7DB5005EDDDF /* FUIButton.m */; };
 		11A007CD188B7DB5005EDDDF /* FUICellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A007AA188B7DB5005EDDDF /* FUICellBackgroundView.m */; };
@@ -113,8 +112,6 @@
 		11A0075A188B2DA7005EDDDF /* PersistencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistencyManager.m; sourceTree = "<group>"; };
 		11A0075D188B4AEB005EDDDF /* SlavePlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlavePlaylistViewController.h; sourceTree = "<group>"; };
 		11A0075E188B4AEB005EDDDF /* SlavePlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlavePlaylistViewController.m; sourceTree = "<group>"; };
-		11A00761188B54F1005EDDDF /* AddSongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSongsViewController.h; sourceTree = "<group>"; };
-		11A00762188B54F1005EDDDF /* AddSongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSongsViewController.m; sourceTree = "<group>"; };
 		11A007A4188B7DB5005EDDDF /* FlatUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatUIKit.h; sourceTree = "<group>"; };
 		11A007A5188B7DB5005EDDDF /* FUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUIAlertView.h; sourceTree = "<group>"; };
 		11A007A6188B7DB5005EDDDF /* FUIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUIAlertView.m; sourceTree = "<group>"; };
@@ -392,8 +389,6 @@
 		11A007F9188B939F005EDDDF /* MasterControllers */ = {
 			isa = PBXGroup;
 			children = (
-				11A00761188B54F1005EDDDF /* AddSongsViewController.h */,
-				11A00762188B54F1005EDDDF /* AddSongsViewController.m */,
 				11F963E9188B114C0051FC0C /* PlaylistTableViewController.h */,
 				11F963EA188B114C0051FC0C /* PlaylistTableViewController.m */,
 				11F963CF188AF4330051FC0C /* CreatePlaylistViewController.h */,
@@ -773,7 +768,6 @@
 				11A007F5188B846A005EDDDF /* PlaylistPickerViewController.m in Sources */,
 				11A007D8188B7DB5005EDDDF /* UIProgressView+FlatUI.m in Sources */,
 				11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */,
-				11A00763188B54F1005EDDDF /* AddSongsViewController.m in Sources */,
 				11A007DC188B7DB5005EDDDF /* UITableViewCell+FlatUI.m in Sources */,
 				11A007D9188B7DB5005EDDDF /* UISlider+FlatUI.m in Sources */,
 				11A0075F188B4AEB005EDDDF /* SlavePlaylistViewController.m in Sources */,

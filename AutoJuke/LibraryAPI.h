@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Playlist.h"
 
 @interface LibraryAPI : NSObject
 

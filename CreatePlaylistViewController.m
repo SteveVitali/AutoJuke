@@ -51,6 +51,10 @@
         navigationController = [tabBarController viewControllers][0];
         PlaylistPickerViewController *pickerController = (PlaylistPickerViewController *)[navigationController viewControllers][0];
         pickerController.delegate = controller;
+        
+        navigationController = [tabBarController viewControllers][2];
+        NowPlayingViewController *nowPlayingController = (NowPlayingViewController *)[navigationController viewControllers][0];
+        nowPlayingController.delegate = controller;
     }
 }
 

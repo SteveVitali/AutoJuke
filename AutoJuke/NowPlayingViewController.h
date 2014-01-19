@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CocoaLibSpotify.h"
 
+@protocol NowPlayingDelegate;
+
 @interface NowPlayingViewController : UIViewController <SPSessionPlaybackDelegate> {
     UILabel *_trackTitle;
     UILabel *_trackArtist;
@@ -20,6 +22,8 @@
     UIButton *_toggleTrackPlayback;
 }
 
+@property (weak) id<NowPlayingDelegate> delegate;
+
 @property (strong, nonatomic) IBOutlet UILabel *trackTitle;
 @property (strong, nonatomic) IBOutlet UILabel *trackArtist;
 @property (strong, nonatomic) IBOutlet UILabel *trackAlbum;
@@ -28,5 +32,21 @@
 @property (strong, nonatomic) IBOutlet UIButton *previousTrack;
 @property (strong, nonatomic) IBOutlet UIButton *nextTrack;
 @property (strong, nonatomic) IBOutlet UIButton *toggleTrackPlayback;
+
+@property (nonatomic, strong) SPTrack *currentTrack;
+@property (nonatomic, strong) SPPlaybackManager *playbackManager;
+
+- (IBAction)playTrack:(id)sender;
+- (IBAction)setTrackPosition:(id)sender;
+- (IBAction)setVolume:(id)sender;
+
+@end
+
+@protocol NowPlayingDelegate <NSObject>
+
+- (NSURL *)getRandomTrackURI;
+
+@required
+
 
 @end

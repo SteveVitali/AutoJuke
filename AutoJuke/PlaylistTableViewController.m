@@ -9,6 +9,7 @@
 #import "PlaylistTableViewController.h"
 #import "CocoaLibSpotify.h"
 #import <Parse/Parse.h>
+#include <stdlib.h>
 
 #define SP_LIBSPOTIFY_DEBUG_LOGGING 1
 
@@ -38,12 +39,6 @@
     
     self.navigationItem.title = self.playlist.name;
     
-	[self addObserver:self forKeyPath:@"currentTrack.name" options:0 context:nil];
-	[self addObserver:self forKeyPath:@"currentTrack.artists" options:0 context:nil];
-	[self addObserver:self forKeyPath:@"currentTrack.duration" options:0 context:nil];
-	[self addObserver:self forKeyPath:@"currentTrack.album.cover.image" options:0 context:nil];
-	[self addObserver:self forKeyPath:@"playbackManager.trackPosition" options:0 context:nil];
-	    
     [self.tableView reloadData];
 }
 
@@ -298,30 +293,6 @@
 	return [NSArray arrayWithArray:tracks];
 }
 
-#pragma mark Playback
-
-- (void)startPlaybackOfTrack:(SPTrack *)aTrack {
-	
-	[SPAsyncLoading waitUntilLoaded:aTrack timeout:5.0 then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
-		[self.playbackManager playTrack:aTrack callback:^(NSError *error) {
-			
-			if (!error) return;
-			
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Couldn't Play"
-															message:error.localizedDescription
-														   delegate:self
-												  cancelButtonTitle:@"OK"
-												  otherButtonTitles:nil];
-			[alert show];
-		}];
-	}];
-}
-
--(void)playbackManagerWillStartPlayingAudio:(SPPlaybackManager *)aPlaybackManager {
-    
-    
-}
-
 #pragma mark - PlaylistPickerDelegate
 
 - (void)addPlaylistsFromController:(PlaylistPickerViewController *)pickerController {
@@ -371,6 +342,7 @@
                 SPTrack *track = [self.playlist.songs objectAtIndex:i];
                 [self.playlist.songTitles addObject:track.name];
                 [self.playlist.songURIs addObject:track.spotifyURL.absoluteString];
+                
             }
             [self addPlaylistToDatabase];
             
@@ -384,6 +356,17 @@
         }];
     }];
     
+}
+
+#pragma mark - NowPlayingDelegate methods
+
+- (NSURL *)getRandomTrackURI {
+    
+    int rand = arc4random() % self.playlist.songURIs.count;
+    
+    NSURL *url = [NSURL URLWithString:[self.playlist.songURIs objectAtIndex:rand]];
+    
+    return url;
 }
 /*
 -(void)waitAndFillTrackPool {

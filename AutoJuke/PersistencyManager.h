@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Playlist.h"
 
 @interface PersistencyManager : NSObject
 
-
+@property Playlist *playist;
 
 @end

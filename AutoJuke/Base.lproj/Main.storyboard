@@ -345,6 +345,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" image="glyphicons_173_play.png"/>
+                                <connections>
+                                    <action selector="playTrack:" destination="u0n-GB-Wsf" eventType="touchUpInside" id="ByD-xW-ESE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLO-ar-717">
                                 <rect key="frame" x="92" y="481" width="28" height="18"/>
