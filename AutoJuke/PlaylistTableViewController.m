@@ -312,7 +312,6 @@
                         if (test.isLocal) {
                             [self.playlist.songs removeObjectAtIndex:i];
                         }
-                        NSLog(@"%@", test.spotifyURL.absoluteString);
                     }
                     NSLog(@"your user name is %@",[[SPSession sharedSession] user].canonicalName);
                     

@@ -47,6 +47,7 @@
 		11A007F0188B7EB1005EDDDF /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11A007E6188B7EB1005EDDDF /* Lato-Light.ttf */; };
 		11A007F1188B7EB1005EDDDF /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11A007E7188B7EB1005EDDDF /* Lato-LightItalic.ttf */; };
 		11A007F2188B7EB1005EDDDF /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11A007E8188B7EB1005EDDDF /* Lato-Regular.ttf */; };
+		11A007F5188B846A005EDDDF /* PlaylistPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A007F4188B846A005EDDDF /* PlaylistPickerViewController.m */; };
 		11F963D1188AF4330051FC0C /* CreatePlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */; };
 		11F963DB188AF53D0051FC0C /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963DA188AF53D0051FC0C /* Playlist.m */; };
 		11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */; };
@@ -154,6 +155,8 @@
 		11A007E6188B7EB1005EDDDF /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		11A007E7188B7EB1005EDDDF /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
 		11A007E8188B7EB1005EDDDF /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		11A007F3188B846A005EDDDF /* PlaylistPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistPickerViewController.h; sourceTree = "<group>"; };
+		11A007F4188B846A005EDDDF /* PlaylistPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistPickerViewController.m; sourceTree = "<group>"; };
 		11F963CF188AF4330051FC0C /* CreatePlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreatePlaylistViewController.h; path = ../CreatePlaylistViewController.h; sourceTree = "<group>"; };
 		11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreatePlaylistViewController.m; path = ../CreatePlaylistViewController.m; sourceTree = "<group>"; };
 		11F963D9188AF53D0051FC0C /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
@@ -381,6 +384,8 @@
 				11A0075E188B4AEB005EDDDF /* SlavePlaylistViewController.m */,
 				11A00761188B54F1005EDDDF /* AddSongsViewController.h */,
 				11A00762188B54F1005EDDDF /* AddSongsViewController.m */,
+				11A007F3188B846A005EDDDF /* PlaylistPickerViewController.h */,
+				11A007F4188B846A005EDDDF /* PlaylistPickerViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -711,6 +716,7 @@
 				11A007D4188B7DB5005EDDDF /* UIFont+FlatUI.m in Sources */,
 				BCA2DC59188A4CF600667BB9 /* AppDelegate.m in Sources */,
 				11A007D2188B7DB5005EDDDF /* UIBarButtonItem+FlatUI.m in Sources */,
+				11A007F5188B846A005EDDDF /* PlaylistPickerViewController.m in Sources */,
 				11A007D8188B7DB5005EDDDF /* UIProgressView+FlatUI.m in Sources */,
 				11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */,
 				11A00763188B54F1005EDDDF /* AddSongsViewController.m in Sources */,
