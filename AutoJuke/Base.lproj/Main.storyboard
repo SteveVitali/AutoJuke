@@ -173,7 +173,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLk-l5-bMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2023" y="703"/>
+            <point key="canvasLocation" x="1585" y="703"/>
         </scene>
         <!--Create Playlist View Controller-->
         <scene sceneID="RsD-Sk-tDc">
