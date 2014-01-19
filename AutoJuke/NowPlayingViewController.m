@@ -12,13 +12,16 @@
 
 @end
 
-@implementation NowPlayingViewController
+@implementation NowPlayingViewController {
+    NSMutableArray *playbackHistory;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        playbackHistory = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -76,42 +79,105 @@
 
 #pragma mark - Playback
 
-- (IBAction)playTrack:(id)sender {
+- (IBAction)playButtonPushed:(id)sender {
 	
 	// Invoked by clicking the "Play" button in the UI.
-	
-	NSURL *trackURL = [self.delegate getRandomTrackURI];
-    NSLog(@"URL: %@",trackURL);
-    
-    [[SPSession sharedSession] trackForURL:trackURL callback:^(SPTrack *track) {
+	if (_playbackManager.isPlaying)
+    // there's a song playing
+    {
+        [self pauseTrack];
+        [sender setImage:[UIImage imageNamed:@"glyphicons_174_pause.png"] forState:UIControlStateNormal];
+    } else if (_currentTrack != nil)
+    // there's nothing playing, but there is a track loaded up...
+    {
+        [self unpauseTrack];
+        [sender setImage:[UIImage imageNamed:@"glyphicons_173_play.png"] forState:UIControlStateNormal];
+    } else
+    // there's nothing playing and there's not track loaded up.
+    {
+        [self moveToNextTrack];
         
-        if (track != nil) {
-            
-            [SPAsyncLoading waitUntilLoaded:track timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *tracks, NSArray *notLoadedTracks) {
-                [self.playbackManager playTrack:track callback:^(NSError *error) {
-                    
-                    if (error != nil) {
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Play Track"
-                                                                        message:[error localizedDescription]
-                                                                       delegate:nil
-                                                              cancelButtonTitle:@"OK"
-                                                              otherButtonTitles:nil];
-                        [alert show];
-                    } else {
-                        self.currentTrack = track;
-                    }
-                    
-                }];
-            }];
-        } else NSLog(@"it is nil");
-    }];
+        [sender setImage:[UIImage imageNamed:@"glyphicons_173_play.png"] forState:UIControlStateNormal];
+    }
+    //[sender ]
     
     return;
 }
 
+- (IBAction)nextButtonPushed:(id)sender {
+    [self moveToNextTrack];
+    [_toggleTrackPlayback setImage:[UIImage imageNamed:@"glyphicons_174_pause.png"] forState:UIControlStateNormal];
+}
+
+- (void)moveToNextTrack {
+    if (_trackTitle != nil) {
+        NSLog(@"okay");
+        [playbackHistory addObject:_currentTrack];
+    }
+    
+    NSURL *trackURL = [self.delegate getRandomTrackURI];
+    
+    [[SPSession sharedSession] trackForURL:trackURL callback:^(SPTrack *track) {
+        if (track != nil) {
+            [self playTrack:track];
+        }
+    }];
+}
+
+- (IBAction)previousButtonPushed:(id)sender {
+    if (playbackHistory.count > 1) {
+        [self moveToPreviousTrack];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"This Is Awkward"
+                                                        message:@"Nothing has played before this!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (void)moveToPreviousTrack {
+    [playbackHistory removeLastObject];
+    [self playTrack: [playbackHistory lastObject]];
+}
+
+- (void)playTrack:(SPTrack *)track {
+            
+    [SPAsyncLoading waitUntilLoaded:track timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *tracks, NSArray *notLoadedTracks)
+    {
+        [self.playbackManager playTrack:track callback:^(NSError *error) {
+            
+            if (error != nil) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Play Track"
+                                                                message:[error localizedDescription]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            } else {
+                self.currentTrack = track;
+            }
+            
+        }];
+    }];
+}
+
+- (void)unpauseTrack {
+    _playbackManager.isPlaying = YES;
+}
+
+- (void)pauseTrack {
+    _playbackManager.isPlaying = NO;
+}
+
 - (IBAction)setTrackPosition:(id)sender {
     
-	[self.playbackManager seekToTrackPosition:self.elapsedTime.value];
+	[self.playbackManager seekToTrackPosition: _elapsedTime.value];
+}
+
+- (void) setTrackPositionToValue:(NSTimeInterval)timeValue {
+    
 }
 
 - (IBAction)setVolume:(id)sender {
