@@ -46,7 +46,7 @@
 - (void)addPlaylistsFromController:(PlaylistPickerViewController *)pickerController {
     
     NSLog(@"THIS RUNS");
-    NSMutableArray *playlists = [[NSMutableArray alloc] initWithArray:pickerController.chosenPlaylists];
+    NSArray *playlists = [[NSMutableArray alloc] initWithArray:pickerController.chosenPlaylists];
 
     NSLog(@"these are the playlists chosen: %@",playlists);
 

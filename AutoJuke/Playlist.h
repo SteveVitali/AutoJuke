@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "CocoaLibSpotify.h"
 
 @interface Playlist : NSObject
 
+@property NSString *objectID;
 @property NSString *name;
 @property NSString *ownerName;
 @property NSMutableArray *songs;
@@ -20,10 +22,14 @@
 @property NSMutableArray *songTitles;
 @property NSMutableArray *songURIs;
 
-@property NSString *objectID;
-
 @property PFObject *parsePlaylist;
 
 - (id)initWithPFObject:(PFObject *)object;
+
+- (NSMutableArray *) songURIs;
+- (NSMutableArray *) songTitles;
+
+- (void) addSPPlaylists:(NSArray *)playlists;
+- (void) addSPTracks:(NSArray *)tracks;
 
 @end
