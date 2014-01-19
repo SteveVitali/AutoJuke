@@ -291,7 +291,6 @@
 		BCA2DC3C188A4CF600667BB9 = {
 			isa = PBXGroup;
 			children = (
-				11A00752188B29A1005EDDDF /* Parse.framework */,
 				BCA2DC4E188A4CF600667BB9 /* AutoJuke */,
 				BCA2DC6D188A4CF600667BB9 /* AutoJukeTests */,
 				BCA2DC47188A4CF600667BB9 /* Frameworks */,
@@ -311,6 +310,7 @@
 		BCA2DC47188A4CF600667BB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11A00752188B29A1005EDDDF /* Parse.framework */,
 				11A00754188B2B57005EDDDF /* FacebookSDK.framework */,
 				11A00750188B277E005EDDDF /* StoreKit.framework */,
 				11A0074E188B2773005EDDDF /* QuartzCore.framework */,
