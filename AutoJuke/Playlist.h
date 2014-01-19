@@ -20,6 +20,8 @@
 @property NSMutableArray *songTitles;
 @property NSMutableArray *songURIs;
 
+@property NSString *objectID;
+
 @property PFObject *parsePlaylist;
 
 - (id)initWithPFObject:(PFObject *)object;

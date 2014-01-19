@@ -47,6 +47,10 @@
         
         controller.playlist = [[Playlist alloc] init];
         controller.playlist.name = self.nameField.text;
+        
+        navigationController = [tabBarController viewControllers][0];
+        PlaylistPickerViewController *pickerController = (PlaylistPickerViewController *)[navigationController viewControllers][0];
+        pickerController.delegate = controller;
     }
 }
 

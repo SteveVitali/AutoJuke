@@ -407,8 +407,6 @@
 		11A007FA188B93BC005EDDDF /* SlaveControllers */ = {
 			isa = PBXGroup;
 			children = (
-				11A007F3188B846A005EDDDF /* PlaylistPickerViewController.h */,
-				11A007F4188B846A005EDDDF /* PlaylistPickerViewController.m */,
 				11A0075D188B4AEB005EDDDF /* SlavePlaylistViewController.h */,
 				11A0075E188B4AEB005EDDDF /* SlavePlaylistViewController.m */,
 				11F963E2188AF8D10051FC0C /* JoinPlaylistViewController.h */,
@@ -420,6 +418,8 @@
 		11F963D5188AF4D70051FC0C /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				11A007F3188B846A005EDDDF /* PlaylistPickerViewController.h */,
+				11A007F4188B846A005EDDDF /* PlaylistPickerViewController.m */,
 				11A007FA188B93BC005EDDDF /* SlaveControllers */,
 				11A007F9188B939F005EDDDF /* MasterControllers */,
 				BCA2DC5D188A4CF600667BB9 /* ViewController.h */,

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Playlist.h"
 #import "CocoaLibSpotify.h"
+#import "PlaylistPickerViewController.h"
 
-@interface PlaylistTableViewController : UITableViewController <UIApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate, SPPlaybackManagerDelegate, SPLoginViewControllerDelegate> {
+@interface PlaylistTableViewController : UITableViewController <UIApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate, SPPlaybackManagerDelegate, SPLoginViewControllerDelegate, PlaylistPickerDelegate> {
    
     UIViewController *_mainViewController;
 	UITextField *_trackURIField;

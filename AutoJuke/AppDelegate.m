@@ -224,12 +224,7 @@ BOOL loggedIn;
 
 -(void)session:(SPSession *)aSession recievedMessageForUser:(NSString *)aMessage; {
 	// Called when the Spotify service wants to relay a piece of information to the user.
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:aMessage
-													message:@"This message was sent to you from the Spotify service."
-												   delegate:nil
-										  cancelButtonTitle:@"OK"
-										  otherButtonTitles:nil];
-	[alert show];
+
 }
 
 

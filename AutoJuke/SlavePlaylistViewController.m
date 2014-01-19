@@ -65,10 +65,58 @@
                 if (aTrack.availability == SP_TRACK_AVAILABILITY_AVAILABLE && [aTrack.name length] > 0)
                     [theTrackPool addObject:aTrack];
             }
-            NSLog(@"the track pool: %@", theTrackPool);
+            
+            NSMutableArray *tempSongs = [NSMutableArray arrayWithArray:[[NSSet setWithArray:theTrackPool] allObjects]];
+            
+
+            
+            [self addPlaylistsToParseDatabase:tempSongs];
+            [self.tableView reloadData];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message"
+                                                            message:@"Albums have been added!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
         }];
     }];
 
+}
+
+- (void)addPlaylistsToParseDatabase:(NSMutableArray *)tempSongs {
+    
+    NSMutableArray *tempTitles= [[NSMutableArray alloc] init];
+    NSMutableArray *tempURIs  = [[NSMutableArray alloc] init];
+    
+    for(int i=0; i<tempSongs.count; i++) {
+        
+        SPTrack *track = [tempSongs objectAtIndex:i];
+        [tempTitles addObject:track.name];
+        [tempURIs addObject:track.spotifyURL.absoluteString];
+    }
+    
+    for(int i=0; i<[tempSongs count]; i++) {
+        
+        SPTrack *test = [tempSongs objectAtIndex:i];
+        if (test.isLocal) {
+            [tempSongs removeObjectAtIndex:i];
+        }
+    }
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Playlist"];
+    
+    // Retrieve the object by id
+    [query getObjectInBackgroundWithId:self.playlist.objectID block:^(PFObject *playlist, NSError *error) {
+        
+        // Now let's update it with some new data. In this case, only cheatMode and score
+        // will get sent to the cloud. playerName hasn't changed.
+        [playlist addUniqueObjectsFromArray:tempTitles forKey:@"songTitles"];
+        [playlist addUniqueObjectsFromArray:tempURIs forKey:@"songURIs"];
+
+        [playlist saveInBackground];
+        
+    }];
 }
 
 -(NSArray *)tracksFromPlaylistItems:(NSArray *)items {
@@ -95,7 +143,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.playlist.songTitles count];
 }
@@ -164,13 +211,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if([segue.identifier isEqualToString:@"createPlaylistSegue"]) {
+    if([segue.identifier isEqualToString:@"pickPlaylistsSegue"]) {
         
         UINavigationController *nav = [segue destinationViewController];
         NSLog(@"nav: %@",nav.class);
         PlaylistPickerViewController *controller = (PlaylistPickerViewController *)[nav viewControllers][0];
         controller.delegate = self;
-
     }
 }
 

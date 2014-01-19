@@ -26,7 +26,7 @@
     self = [super init];
     if (self) {
         self.name = object[@"name"];
-        
+        self.objectID = object.objectId;
     }
     return self;
 }
