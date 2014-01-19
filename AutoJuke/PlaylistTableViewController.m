@@ -327,6 +327,8 @@
                         [self.playlist.songURIs addObject:track.spotifyURL.absoluteString];
                     }
                     [self addPlaylistToDatabase];
+                    NSLog(@"what is thiasdfasdfs help %@",[[SPSession sharedSession] userPlaylists].playlists);
+
 				}];
 			}];
 		}];

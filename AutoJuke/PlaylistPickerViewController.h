@@ -10,4 +10,6 @@
 
 @interface PlaylistPickerViewController : UITableViewController
 
+@property NSArray *playlists;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SlavePlaylistViewController.h"
+#import "PlaylistPickerViewController.h"
 #import "Playlist.h"
 
 @interface SlavePlaylistViewController ()
@@ -119,5 +120,13 @@
 }
 
  */
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if([segue.identifier isEqualToString:@"createPlaylistSegue"]) {
+        
+        PlaylistPickerViewController *controller = (PlaylistPickerViewController *)[segue destinationViewController];
+    }
+}
 
 @end

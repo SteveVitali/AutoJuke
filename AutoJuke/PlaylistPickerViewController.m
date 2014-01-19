@@ -7,6 +7,7 @@
 //
 
 #import "PlaylistPickerViewController.h"
+#import "CocoaLibSpotify.h"
 
 @interface PlaylistPickerViewController ()
 
@@ -32,6 +33,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.playlists = [[SPSession sharedSession] userPlaylists].playlists;
+    NSLog(@"what is this help %@",[SPSession sharedSession]);
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,14 +49,14 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.playlists.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,7 +65,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    
+        
     return cell;
 }
 
