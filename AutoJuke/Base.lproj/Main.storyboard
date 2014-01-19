@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="757" y="271"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Slave Playlist View Controller-->
         <scene sceneID="g4g-f7-mM3">
             <objects>
-                <tableViewController id="AQj-kt-mmN" sceneMemberID="viewController">
+                <tableViewController id="AQj-kt-mmN" customClass="SlavePlaylistViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ypk-sh-Q3U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

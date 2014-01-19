@@ -315,7 +315,18 @@
                         NSLog(@"%@", test.spotifyURL.absoluteString);
                     }
                     NSLog(@"your user name is %@",[[SPSession sharedSession] user].canonicalName);
+                    
                     [self.tableView reloadData];
+
+                    self.playlist.songTitles = [[NSMutableArray alloc] init];
+                    self.playlist.songURIs  = [[NSMutableArray alloc] init];
+                    
+                    for(int i=0; i<self.playlist.songs.count; i++) {
+                        
+                        SPTrack *track = [self.playlist.songs objectAtIndex:i];
+                        [self.playlist.songTitles addObject:track.name];
+                        [self.playlist.songURIs addObject:track.spotifyURL.absoluteString];
+                    }
                     [self addPlaylistToDatabase];
 				}];
 			}];
@@ -327,9 +338,8 @@
     
     self.playlist.parsePlaylist = [PFObject objectWithClassName:@"Playlist"];
     
-    NSMutableDictionary *playlistDict = [self.playlist getSongsDictionary];
-    
-    self.playlist.parsePlaylist[@"songs"] = playlistDict;
+    self.playlist.parsePlaylist[@"songURIs"] = self.playlist.songURIs;
+    self.playlist.parsePlaylist[@"songTitles"] = self.playlist.songTitles;
     self.playlist.parsePlaylist[@"owner"] = [[SPSession sharedSession] user].canonicalName;
     self.playlist.parsePlaylist[@"name"]  = self.playlist.name;
     

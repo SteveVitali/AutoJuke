@@ -49,6 +49,16 @@
                 // Do something with the found objects
                 for (PFObject *object in objects) {
                     NSLog(@"object id: %@", object.objectId);
+                    
+                    controller.playlist = [[Playlist alloc] init];
+
+                    controller.playlist.name = object[@"name"];
+                    controller.playlist.songTitles = [[NSMutableArray alloc] initWithArray:object[@"songTitles"]];
+                    controller.playlist.songTitles = object[@"songTitles"];
+                    controller.playlist.songURIs   = object[@"songURIs"];
+                    controller.navigationItem.title = controller.playlist.name;
+                    [controller.tableView reloadData];
+                    NSLog(@"something else: %d",controller.playlist.songURIs.count);
                 }
                 
             } else {

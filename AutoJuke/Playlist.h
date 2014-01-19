@@ -17,12 +17,11 @@
 @property NSMutableArray *users;
 
 // this contains each SPTrack's URL.absoluteString and name
-@property NSMutableDictionary *songsDictionary;
+@property NSMutableArray *songTitles;
+@property NSMutableArray *songURIs;
 
 @property PFObject *parsePlaylist;
 
 - (id)initWithPFObject:(PFObject *)object;
-
-- (NSMutableDictionary *)getSongsDictionary;
 
 @end
