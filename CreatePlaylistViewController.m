@@ -41,7 +41,7 @@
         
         UITabBarController *tabBarController = (UITabBarController *)[segue destinationViewController];
         
-        UINavigationController *navigationController = [tabBarController viewControllers][0];
+        UINavigationController *navigationController = [tabBarController viewControllers][1];
         
         PlaylistTableViewController *controller = (PlaylistTableViewController *)[navigationController viewControllers][0];
         

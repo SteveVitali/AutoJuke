@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fd8-gp-vnH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fd8-gp-vnH">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -59,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="306" y="-49"/>
+            <point key="canvasLocation" x="286" y="-33"/>
         </scene>
         <!--Join Playlist View Controller-->
         <scene sceneID="BE9-P8-Lk7">
@@ -211,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhB-UU-McI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="-49"/>
+            <point key="canvasLocation" x="749" y="-833"/>
         </scene>
         <!--Playlist Table View Controller-->
         <scene sceneID="D4v-HN-oxv">
@@ -240,7 +240,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7l-VF-rE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043" y="-49"/>
+            <point key="canvasLocation" x="2063" y="-833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cte-Sg-uBx">
@@ -255,7 +255,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITa-0y-vBN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-106" y="-49"/>
+            <point key="canvasLocation" x="-726" y="-33"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Old-Se-sdl">
@@ -274,13 +274,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGM-3o-Y3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043" y="-720"/>
+            <point key="canvasLocation" x="2063" y="-1580"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Queued-->
         <scene sceneID="Zqo-9i-oSC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cAG-yo-tX4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2B5-XV-tjL"/>
+                    <tabBarItem key="tabBarItem" title="Queued" image="glyphicons_239_albums.png" id="2B5-XV-tjL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q6e-ek-t2K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -293,7 +293,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEP-vJ-a7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1585" y="-49"/>
+            <point key="canvasLocation" x="1605" y="-833"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VQF-Jw-vxJ">
@@ -307,19 +307,19 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="cAG-yo-tX4" kind="relationship" relationship="viewControllers" id="qZc-mu-E2g"/>
                         <segue destination="8by-g1-nHJ" kind="relationship" relationship="viewControllers" id="IwL-m6-Ezp"/>
+                        <segue destination="cAG-yo-tX4" kind="relationship" relationship="viewControllers" id="qZc-mu-E2g"/>
                         <segue destination="7bs-48-qGi" kind="relationship" relationship="viewControllers" id="zGS-ey-No8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0cr-o8-q72" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1161" y="-49"/>
+            <point key="canvasLocation" x="1181" y="-833"/>
         </scene>
-        <!--View Controller-->
+        <!--Now Playing View Controller-->
         <scene sceneID="Lvr-RS-fHV">
             <objects>
-                <viewController id="u0n-GB-Wsf" sceneMemberID="viewController">
+                <viewController id="u0n-GB-Wsf" customClass="NowPlayingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h8i-tc-ijb"/>
                         <viewControllerLayoutGuide type="bottom" id="wJh-Oe-6xN"/>
@@ -327,19 +327,76 @@
                     <view key="view" contentMode="scaleToFill" id="H1F-nd-hGI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c1z-U7-1bB">
+                                <rect key="frame" x="20" y="144" width="280" height="282"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plf-ny-OwT">
+                                <rect key="frame" x="0.0" y="115" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh4-xO-qvn">
+                                <rect key="frame" x="146" y="481" width="28" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="glyphicons_173_play.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLO-ar-717">
+                                <rect key="frame" x="92" y="481" width="28" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="glyphicons_170_step_backward.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5H3-9L-NwR">
+                                <rect key="frame" x="200" y="481" width="28" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="glyphicons_178_step_forward.png"/>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jnb-0r-E6n">
+                                <rect key="frame" x="0.0" y="74" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LX-eM-R3s">
+                                <rect key="frame" x="0.0" y="96" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="I0y-Xx-ZxI">
+                                <rect key="frame" x="18" y="434" width="284" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="hMt-mc-tTs"/>
+                    <connections>
+                        <outlet property="elapsedTime" destination="I0y-Xx-ZxI" id="Kto-Xe-pnL"/>
+                        <outlet property="nextTrack" destination="5H3-9L-NwR" id="MXY-RJ-iWw"/>
+                        <outlet property="previousTrack" destination="tLO-ar-717" id="xX0-rg-9Le"/>
+                        <outlet property="toggleTrackPlayback" destination="mh4-xO-qvn" id="b7U-mJ-sXv"/>
+                        <outlet property="trackAlbum" destination="plf-ny-OwT" id="Otb-AW-4RR"/>
+                        <outlet property="trackAlbumCover" destination="c1z-U7-1bB" id="Om8-ty-3PP"/>
+                        <outlet property="trackArtist" destination="1LX-eM-R3s" id="5o5-Kw-vLX"/>
+                        <outlet property="trackTitle" destination="Jnb-0r-E6n" id="FxR-eL-6FI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBO-kQ-mY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043" y="-1390"/>
+            <point key="canvasLocation" x="2063" y="-98"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Add Playlist-->
         <scene sceneID="OpT-CV-dDC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8by-g1-nHJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Klx-FN-KeV"/>
+                    <tabBarItem key="tabBarItem" title="Add Playlist" image="glyphicons_164_iphone_transfer.png" id="Klx-FN-KeV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j6W-gQ-pwb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -352,13 +409,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsa-rt-fvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1585" y="-720"/>
+            <point key="canvasLocation" x="1605" y="-1580"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Now Playing-->
         <scene sceneID="G1a-Kg-6vu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7bs-48-qGi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="XSk-G1-r3A"/>
+                    <tabBarItem key="tabBarItem" title="Now Playing" image="glyphicons_173_play.png" id="XSk-G1-r3A"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bpe-ac-N8v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -371,7 +428,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yy0-jf-IVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1585" y="-1390"/>
+            <point key="canvasLocation" x="1605" y="-98"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="c3t-LJ-8kf">
@@ -399,11 +456,17 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ah3-Qz-pQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-221" y="-33"/>
         </scene>
     </scenes>
     <resources>
         <image name="glyphicons_000_glass.png" width="24" height="24"/>
         <image name="glyphicons_006_user_add.png" width="28" height="22"/>
+        <image name="glyphicons_164_iphone_transfer.png" width="29" height="24"/>
+        <image name="glyphicons_170_step_backward.png" width="14" height="18"/>
+        <image name="glyphicons_173_play.png" width="16" height="18"/>
+        <image name="glyphicons_178_step_forward.png" width="14" height="18"/>
+        <image name="glyphicons_239_albums.png" width="28" height="18"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
