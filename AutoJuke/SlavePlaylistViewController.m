@@ -43,6 +43,48 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)addPlaylistsFromController:(PlaylistPickerViewController *)pickerController {
+    
+    NSLog(@"THIS RUNS");
+    NSMutableArray *playlists = [[NSMutableArray alloc] initWithArray:pickerController.chosenPlaylists];
+
+    NSLog(@"these are the playlists chosen: %@",playlists);
+
+    [SPAsyncLoading waitUntilLoaded:playlists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedPlaylists, NSArray *notLoadedPlaylists) {
+        
+        // All of our playlists have loaded their metadata — wait for all tracks to load their metadata.
+        NSArray *playlistItems = [playlists valueForKeyPath:@"@unionOfArrays.items"];
+        NSArray *tracks = [self tracksFromPlaylistItems:playlistItems];
+        
+        [SPAsyncLoading waitUntilLoaded:tracks timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedTracks, NSArray *notLoadedTracks) {
+            
+            // All of our tracks have loaded their metadata. Hooray!
+            NSMutableArray *theTrackPool = [NSMutableArray arrayWithCapacity:loadedTracks.count];
+            
+            for (SPTrack *aTrack in loadedTracks) {
+                if (aTrack.availability == SP_TRACK_AVAILABILITY_AVAILABLE && [aTrack.name length] > 0)
+                    [theTrackPool addObject:aTrack];
+            }
+            NSLog(@"the track pool: %@", theTrackPool);
+        }];
+    }];
+
+}
+
+-(NSArray *)tracksFromPlaylistItems:(NSArray *)items {
+	
+	NSMutableArray *tracks = [NSMutableArray arrayWithCapacity:items.count];
+	
+	for (SPPlaylistItem *anItem in items) {
+		if (anItem.itemClass == [SPTrack class]) {
+			[tracks addObject:anItem.item];
+		}
+	}
+	
+	return [NSArray arrayWithArray:tracks];
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -55,7 +97,6 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"something something: %d", [self.playlist.songTitles count]);
     return [self.playlist.songTitles count];
 }
 
@@ -125,7 +166,11 @@
     
     if([segue.identifier isEqualToString:@"createPlaylistSegue"]) {
         
-        PlaylistPickerViewController *controller = (PlaylistPickerViewController *)[segue destinationViewController];
+        UINavigationController *nav = [segue destinationViewController];
+        NSLog(@"nav: %@",nav.class);
+        PlaylistPickerViewController *controller = (PlaylistPickerViewController *)[nav viewControllers][0];
+        controller.delegate = self;
+
     }
 }
 
