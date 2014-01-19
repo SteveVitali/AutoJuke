@@ -16,11 +16,13 @@
 
 @implementation AppDelegate
 
+BOOL loggedIn;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    /***************************
-     ** ViewController Access **
-     ***************************/
+    /**************************************
+     ** Set Up ViewController References **
+     **************************************/
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -33,9 +35,19 @@
     
 	self.window.rootViewController = self.viewController;
     
+    /***********************
+     ** Set up Parse API  **
+     ***********************/
+    
     [Parse setApplicationId:@"Lwkw4PMt3tatJojVJkjSV9zLxtkA6wIh6q5yXuBl"
                   clientKey:@"mIBC4cPOGGbOwKZcXaVdmAGabxDwGp4NuK1mRoGy"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    /******************************
+     ** Set up Cocoa/Spotify API **
+     ******************************/
+    
+    // init SPSession ( CocoaLibSession )
     
     NSError *error = nil;
 	[SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:&g_appkey length:g_appkey_size]
@@ -48,18 +60,64 @@
 	}
     [[SPSession sharedSession] setDelegate:self];
     
-    [self performSelector:@selector(showLogin) withObject:nil afterDelay:0.0];
+    // Log User In
     
+    if (! [self loginWithStoredCredentials]) {
+        [self showLoginView];
+    }
+    
+    // END appDidFinishLaunching[...] delegate code
+
     return YES;
 }
 
--(void)showLogin {
+-(void)clearStoredCredentials {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"SpotifyUsers"];
+}
+
+-(BOOL)loginWithStoredCredentials {
+    NSDictionary *storedCredentials = [[NSUserDefaults standardUserDefaults]
+                                       valueForKey:@"SpotifyUsers"];
+    
+    if (storedCredentials.count > 0)
+        // if there are credentials
+    {
+        NSLog(@"Credentials found: Setting...");
+        
+        NSString *username = [storedCredentials allKeys][0];
+        NSString *credential = [storedCredentials valueForKey:username];
+        
+        NSLog(@"username: %@", username);
+        if (credential == nil) NSLog(@"credential string invalid");
+        
+        [[SPSession sharedSession] attemptLoginWithUserName:username
+                                         existingCredential:credential];
+        
+        if (! loggedIn)
+        // if the credentials don't work out
+        {
+            [self clearStoredCredentials];
+            return false;
+        }
+    }
+    else
+    // there are no credentials
+    {
+        [self performSelector:@selector(showLoginView) withObject:nil afterDelay:0.0];
+        return false;
+    }
+    
+    return true;
+}
+
+-(void)showLoginView {
     
 	SPLoginViewController *spotifyLogin = [SPLoginViewController
                                            loginControllerForSession:[SPSession sharedSession]];
 	spotifyLogin.allowsCancel = NO;
 	// ^ To allow the user to cancel (i.e., your application doesn't require a logged-in Spotify user, set this to YES.
 	[self.viewController presentViewController:spotifyLogin animated:NO completion:nil];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -114,6 +172,8 @@
 			[alert show];
 		}];
 	}];
+    
+    loggedIn = true;
 }
 
 -(void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error {
@@ -122,22 +182,28 @@
 
 -(void)sessionDidLogOut:(SPSession *)aSession; {
 	// Called after a logout has been completed.
+    
+    loggedIn = false;
 }
 
--(void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName {
+-(void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential
+                                                     forUserName:(NSString *)userName {
+    NSLog(@"SPSession logged in; login credentials generated.");
     
-	// Called when login credentials are created. If you want to save user logins, uncomment the code below.
-    
-	
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *storedCredentials = [[defaults valueForKey:@"SpotifyUsers"] mutableCopy];
     
-    if (storedCredentials == nil)
+    if (storedCredentials == nil) {
+        NSLog(@"No stored credentials; initializing...");
         storedCredentials = [NSMutableDictionary dictionary];
+    } else {
+        NSLog(@"didGenerateLoginCredentials only supports 1 saved user blob.");
+        NSLog(@"initializing new credentials..");
+        storedCredentials = [NSMutableDictionary dictionary];
+    }
     
     [storedCredentials setValue:credential forKey:userName];
     [defaults setValue:storedCredentials forKey:@"SpotifyUsers"];
-    
 }
 
 -(void)session:(SPSession *)aSession didEncounterNetworkError:(NSError *)error; {
