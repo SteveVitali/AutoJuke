@@ -89,14 +89,74 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="8My-P3-tm0"/>
+                    <navigationItem key="navigationItem" id="8My-P3-tm0">
+                        <barButtonItem key="rightBarButtonItem" title="Join" id="Eei-F6-Bqr">
+                            <connections>
+                                <action selector="joinPlaylist:" destination="aid-zE-vaV" id="WEm-2I-KQB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="Tr8-wU-3mA" id="McK-8A-hlA"/>
+                        <segue destination="AQj-kt-mmN" kind="push" identifier="joinPlaylistSegue" id="kRE-sE-Tla"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qd7-XO-Bmc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="757" y="271"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="g4g-f7-mM3">
+            <objects>
+                <tableViewController id="AQj-kt-mmN" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ypk-sh-Q3U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="YF5-G3-cXo">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YF5-G3-cXo" id="NFM-ua-Yrf">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AQj-kt-mmN" id="2NM-hA-eY0"/>
+                            <outlet property="delegate" destination="AQj-kt-mmN" id="zri-fb-CYw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="bpd-HF-9uB">
+                        <barButtonItem key="rightBarButtonItem" title="Add Songs" id="9L9-kr-ovP">
+                            <connections>
+                                <segue destination="rJS-cm-sMv" kind="modal" id="aNo-Vg-1Zu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rsO-kd-0L6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1170" y="271"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UTw-hk-2l8">
+            <objects>
+                <viewController id="rJS-cm-sMv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JfL-B3-sZf"/>
+                        <viewControllerLayoutGuide type="bottom" id="FIN-qt-EBw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rsi-KN-SbX" customClass="AddSongsViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GfZ-uT-S3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1555" y="271"/>
         </scene>
         <!--Create Playlist View Controller-->
         <scene sceneID="RsD-Sk-tDc">

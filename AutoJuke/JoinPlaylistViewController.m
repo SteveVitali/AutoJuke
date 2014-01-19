@@ -7,6 +7,8 @@
 //
 
 #import "JoinPlaylistViewController.h"
+#import "SlavePlaylistViewController.h"
+#import "Playlist.h"
 
 @interface JoinPlaylistViewController ()
 
@@ -27,6 +29,34 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+- (IBAction)joinPlaylist:(id)sender {
+    
+    [self performSegueWithIdentifier:@"joinPlaylistSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if([segue.identifier isEqualToString:@"joinPlaylistSegue"]) {
+        SlavePlaylistViewController *controller = (SlavePlaylistViewController *)[segue destinationViewController];
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"Playlist"];
+        [query whereKey:@"name" equalTo:self.nameField.text];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                NSLog(@"Successfully retrieved stuff");
+                // Do something with the found objects
+                for (PFObject *object in objects) {
+                    NSLog(@"object id: %@", object.objectId);
+                }
+                
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning

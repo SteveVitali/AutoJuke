@@ -16,6 +16,8 @@
 		11A00755188B2B57005EDDDF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A00754188B2B57005EDDDF /* FacebookSDK.framework */; };
 		11A0075B188B2DA7005EDDDF /* LibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A00758188B2DA7005EDDDF /* LibraryAPI.m */; };
 		11A0075C188B2DA7005EDDDF /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0075A188B2DA7005EDDDF /* PersistencyManager.m */; };
+		11A0075F188B4AEB005EDDDF /* SlavePlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0075E188B4AEB005EDDDF /* SlavePlaylistViewController.m */; };
+		11A00763188B54F1005EDDDF /* AddSongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A00762188B54F1005EDDDF /* AddSongsViewController.m */; };
 		11F963D1188AF4330051FC0C /* CreatePlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */; };
 		11F963DB188AF53D0051FC0C /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963DA188AF53D0051FC0C /* Playlist.m */; };
 		11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */; };
@@ -70,6 +72,10 @@
 		11A00758188B2DA7005EDDDF /* LibraryAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryAPI.m; sourceTree = "<group>"; };
 		11A00759188B2DA7005EDDDF /* PersistencyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistencyManager.h; sourceTree = "<group>"; };
 		11A0075A188B2DA7005EDDDF /* PersistencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistencyManager.m; sourceTree = "<group>"; };
+		11A0075D188B4AEB005EDDDF /* SlavePlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlavePlaylistViewController.h; sourceTree = "<group>"; };
+		11A0075E188B4AEB005EDDDF /* SlavePlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlavePlaylistViewController.m; sourceTree = "<group>"; };
+		11A00761188B54F1005EDDDF /* AddSongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSongsViewController.h; sourceTree = "<group>"; };
+		11A00762188B54F1005EDDDF /* AddSongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSongsViewController.m; sourceTree = "<group>"; };
 		11F963CF188AF4330051FC0C /* CreatePlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreatePlaylistViewController.h; path = ../CreatePlaylistViewController.h; sourceTree = "<group>"; };
 		11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreatePlaylistViewController.m; path = ../CreatePlaylistViewController.m; sourceTree = "<group>"; };
 		11F963D9188AF53D0051FC0C /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
@@ -213,6 +219,10 @@
 				11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */,
 				11F963E9188B114C0051FC0C /* PlaylistTableViewController.h */,
 				11F963EA188B114C0051FC0C /* PlaylistTableViewController.m */,
+				11A0075D188B4AEB005EDDDF /* SlavePlaylistViewController.h */,
+				11A0075E188B4AEB005EDDDF /* SlavePlaylistViewController.m */,
+				11A00761188B54F1005EDDDF /* AddSongsViewController.h */,
+				11A00762188B54F1005EDDDF /* AddSongsViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -524,6 +534,8 @@
 				11F963DB188AF53D0051FC0C /* Playlist.m in Sources */,
 				BCA2DC59188A4CF600667BB9 /* AppDelegate.m in Sources */,
 				11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */,
+				11A00763188B54F1005EDDDF /* AddSongsViewController.m in Sources */,
+				11A0075F188B4AEB005EDDDF /* SlavePlaylistViewController.m in Sources */,
 				11F963D1188AF4330051FC0C /* CreatePlaylistViewController.m in Sources */,
 				11A0075B188B2DA7005EDDDF /* LibraryAPI.m in Sources */,
 				BCA2DC55188A4CF600667BB9 /* main.m in Sources */,

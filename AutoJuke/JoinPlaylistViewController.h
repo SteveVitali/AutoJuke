@@ -10,4 +10,8 @@
 
 @interface JoinPlaylistViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+
+- (IBAction)joinPlaylist:(id)sender;
+
 @end

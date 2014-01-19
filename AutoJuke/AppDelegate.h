@@ -11,7 +11,7 @@
 
 @class ViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, SPSessionDelegate>
 
 @property (strong, nonatomic) UIViewController *viewController;
 @property (nonatomic, strong) IBOutlet UIWindow *window;

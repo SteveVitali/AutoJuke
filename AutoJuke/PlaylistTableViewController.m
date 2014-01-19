@@ -8,7 +8,6 @@
 
 #import "PlaylistTableViewController.h"
 #import "CocoaLibSpotify.h"
-#import "appkey.c"
 #import <Parse/Parse.h>
 
 #define SP_LIBSPOTIFY_DEBUG_LOGGING 1
@@ -39,27 +38,13 @@
     
     self.navigationItem.title = self.playlist.name;
     
-	NSError *error = nil;
-	[SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:&g_appkey length:g_appkey_size]
-											   userAgent:@"com.spotify.SimplePlayer-iOS"
-										   loadingPolicy:SPAsyncLoadingManual
-												   error:&error];
-	if (error != nil) {
-		NSLog(@"CocoaLibSpotify init failed: %@", error);
-		abort();
-	}
-    
-	self.playbackManager = [[SPPlaybackManager alloc] initWithPlaybackSession:[SPSession sharedSession]];
-	[[SPSession sharedSession] setDelegate:self];
-    
 	[self addObserver:self forKeyPath:@"currentTrack.name" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"currentTrack.artists" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"currentTrack.duration" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"currentTrack.album.cover.image" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"playbackManager.trackPosition" options:0 context:nil];
-	
-	[self performSelector:@selector(showLogin) withObject:nil afterDelay:0.0];
-    
+	    
+    [self waitAndFillTrackPool];
     [self.tableView reloadData];
 }
 
@@ -67,7 +52,7 @@
     
 	SPLoginViewController *spotifyLogin = [SPLoginViewController
                                            loginControllerForSession:[SPSession sharedSession]];
-	spotifyLogin.allowsCancel = NO;
+	spotifyLogin.allowsCancel = YES;
 	// ^ To allow the user to cancel (i.e., your application doesn't require a logged-in Spotify user, set this to YES.
 	[self presentViewController:spotifyLogin animated:NO completion:nil];
 }
@@ -342,18 +327,7 @@
     
     self.playlist.parsePlaylist = [PFObject objectWithClassName:@"Playlist"];
     
-    NSMutableArray *songNames = [[NSMutableArray alloc] init];
-    NSMutableArray *songURIs  = [[NSMutableArray alloc] init];
-    
-    for(int i=0; i<self.playlist.songs.count; i++) {
-        
-        SPTrack *track = [self.playlist.songs objectAtIndex:i];
-        [songNames addObject:track.name];
-        [songURIs addObject:track.spotifyURL.absoluteString];
-    }
-    NSDictionary *playlistDict = [[NSDictionary alloc] initWithObjects:songNames forKeys:songURIs];
-    
-    NSLog(@"this is the motherfucking title of the playlist: %@", self.playlist.name);
+    NSMutableDictionary *playlistDict = [self.playlist getSongsDictionary];
     
     self.playlist.parsePlaylist[@"songs"] = playlistDict;
     self.playlist.parsePlaylist[@"owner"] = [[SPSession sharedSession] user].canonicalName;
