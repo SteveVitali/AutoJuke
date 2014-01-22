@@ -21,7 +21,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        playbackHistory = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -35,6 +34,7 @@
      ****************************/
     
     _playbackManager = [[SPPlaybackManager alloc] initWithPlaybackSession:[SPSession sharedSession]];
+    playbackHistory = [[NSMutableArray alloc] init];
     
     // observe current[...] variables and if changed change IBOutlets accordingly
     // see below -(void) observeValueForKeyPath:ofObject:change:context:
@@ -83,21 +83,23 @@
 	
 	// Invoked by clicking the "Play" button in the UI.
 	if (_playbackManager.isPlaying)
-    // there's a song playing
+    // there's a song playing, so Pause it.
     {
         [self pauseTrack];
-        [sender setImage:[UIImage imageNamed:@"glyphicons_174_pause.png"] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"glyphicons_173_play.png"] forState:UIControlStateNormal];
     } else if (_currentTrack != nil)
     // there's nothing playing, but there is a track loaded up...
+    // so play it
     {
         [self unpauseTrack];
-        [sender setImage:[UIImage imageNamed:@"glyphicons_173_play.png"] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"glyphicons_174_pause.png"] forState:UIControlStateNormal];
     } else
     // there's nothing playing and there's not track loaded up.
+    // so play it
     {
         [self moveToNextTrack];
         
-        [sender setImage:[UIImage imageNamed:@"glyphicons_173_play.png"] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"glyphicons_174_pause.png"] forState:UIControlStateNormal];
     }
     //[sender ]
     
@@ -110,10 +112,8 @@
 }
 
 - (void)moveToNextTrack {
-    if (_trackTitle != nil) {
-        NSLog(@"okay");
+    if (_currentTrack != nil)
         [playbackHistory addObject:_currentTrack];
-    }
     
     NSURL *trackURL = [self.delegate getRandomTrackURI];
     
@@ -125,7 +125,7 @@
 }
 
 - (IBAction)previousButtonPushed:(id)sender {
-    if (playbackHistory.count > 1) {
+    if ([playbackHistory count] > 0) {
         [self moveToPreviousTrack];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"This Is Awkward"
@@ -138,8 +138,9 @@
 }
 
 - (void)moveToPreviousTrack {
-    [playbackHistory removeLastObject];
     [self playTrack: [playbackHistory lastObject]];
+    [_toggleTrackPlayback setImage:[UIImage imageNamed:@"glyphicons_174_pause.png"] forState:UIControlStateNormal];
+    [playbackHistory removeLastObject];
 }
 
 - (void)playTrack:(SPTrack *)track {
@@ -172,7 +173,6 @@
 }
 
 - (IBAction)setTrackPosition:(id)sender {
-    
 	[self.playbackManager seekToTrackPosition: _elapsedTime.value];
 }
 
