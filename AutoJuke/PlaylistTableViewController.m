@@ -9,6 +9,7 @@
 #import "PlaylistTableViewController.h"
 #import "CocoaLibSpotify.h"
 #import <Parse/Parse.h>
+#include <stdlib.h>
 
 #define SP_LIBSPOTIFY_DEBUG_LOGGING 1
 
@@ -38,13 +39,6 @@
     
     self.navigationItem.title = self.playlist.name;
     
-	[self addObserver:self forKeyPath:@"currentTrack.name" options:0 context:nil];
-	[self addObserver:self forKeyPath:@"currentTrack.artists" options:0 context:nil];
-	[self addObserver:self forKeyPath:@"currentTrack.duration" options:0 context:nil];
-	[self addObserver:self forKeyPath:@"currentTrack.album.cover.image" options:0 context:nil];
-	[self addObserver:self forKeyPath:@"playbackManager.trackPosition" options:0 context:nil];
-	    
-    [self waitAndFillTrackPool];
     [self.tableView reloadData];
 }
 
@@ -112,7 +106,6 @@
 			[alert show];
 		}];
 	}];
-    [self waitAndFillTrackPool];
 }
 
 -(void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error {
@@ -180,7 +173,6 @@
 	//if ([[NSUserDefaults standardUserDefaults] boolForKey:@"CreatePlaylist"])
 	//	self.playlist = [[[SPSession sharedSession] userPlaylists] createPlaylistWithName:self.playlistNameField.stringValue];
 
-	//[self waitAndFillTrackPool];
 }
 
 #pragma mark - Table view data source
@@ -262,6 +254,121 @@
 
 #pragma mark Finding Tracks
 
+- (void)addPlaylistToDatabase {
+    
+    self.playlist.parsePlaylist = [PFObject objectWithClassName:@"Playlist"];
+    
+    self.playlist.parsePlaylist[@"songURIs"] = self.playlist.songURIs;
+    self.playlist.parsePlaylist[@"songTitles"] = self.playlist.songTitles;
+    self.playlist.parsePlaylist[@"owner"] = [[SPSession sharedSession] user].canonicalName;
+    self.playlist.parsePlaylist[@"name"]  = self.playlist.name;
+    
+    [self.playlist.parsePlaylist save];
+}
+
+-(NSArray *)playlistsInFolder:(SPPlaylistFolder *)aFolder {
+	
+	NSMutableArray *playlists = [NSMutableArray arrayWithCapacity:[[aFolder playlists] count]];
+	
+	for (id playlistOrFolder in aFolder.playlists) {
+		if ([playlistOrFolder isKindOfClass:[SPPlaylist class]]) {
+			[playlists addObject:playlistOrFolder];
+		} else {
+			[playlists addObjectsFromArray:[self playlistsInFolder:playlistOrFolder]];
+		}
+	}
+	return [NSArray arrayWithArray:playlists];
+}
+
+-(NSArray *)tracksFromPlaylistItems:(NSArray *)items {
+	
+	NSMutableArray *tracks = [NSMutableArray arrayWithCapacity:items.count];
+	
+	for (SPPlaylistItem *anItem in items) {
+		if (anItem.itemClass == [SPTrack class]) {
+			[tracks addObject:anItem.item];
+		}
+	}
+	
+	return [NSArray arrayWithArray:tracks];
+}
+
+#pragma mark - PlaylistPickerDelegate
+
+- (void)addPlaylistsFromController:(PlaylistPickerViewController *)pickerController {
+    
+    NSMutableArray *playlists = [[NSMutableArray alloc] initWithArray:pickerController.chosenPlaylists];
+    
+    NSLog(@"these are the playlists chosen: %@",playlists);
+    
+    [SPAsyncLoading waitUntilLoaded:playlists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedPlaylists, NSArray *notLoadedPlaylists) {
+        
+        // All of our playlists have loaded their metadata — wait for all tracks to load their metadata.
+        NSArray *playlistItems = [playlists valueForKeyPath:@"@unionOfArrays.items"];
+        NSArray *tracks = [self tracksFromPlaylistItems:playlistItems];
+        
+        [SPAsyncLoading waitUntilLoaded:tracks timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedTracks, NSArray *notLoadedTracks) {
+            
+            // All of our tracks have loaded their metadata. Hooray!
+            NSMutableArray *theTrackPool = [NSMutableArray arrayWithCapacity:loadedTracks.count];
+            
+            for (SPTrack *aTrack in loadedTracks) {
+                if (aTrack.availability == SP_TRACK_AVAILABILITY_AVAILABLE && [aTrack.name length] > 0)
+                    [theTrackPool addObject:aTrack];
+            }
+            NSLog(@"the track pool: %@", theTrackPool);
+            
+            self.playlist.songs = [NSMutableArray arrayWithArray:[[NSSet setWithArray:theTrackPool] allObjects]];
+            // ^ Thin out duplicates.
+            
+            //[self startNewRound];
+            NSLog(@"there are %d items in the tracks list",self.playlist.songs.count);
+            for(int i=0; i<[self.playlist.songs count]; i++) {
+                
+                SPTrack *test = [self.playlist.songs objectAtIndex:i];
+                if (test.isLocal) {
+                    [self.playlist.songs removeObjectAtIndex:i];
+                }
+            }
+            NSLog(@"your user name is %@",[[SPSession sharedSession] user].canonicalName);
+            
+            [self.tableView reloadData];
+            
+            self.playlist.songTitles = [[NSMutableArray alloc] init];
+            self.playlist.songURIs  = [[NSMutableArray alloc] init];
+            
+            for(int i=0; i<self.playlist.songs.count; i++) {
+                
+                SPTrack *track = [self.playlist.songs objectAtIndex:i];
+                [self.playlist.songTitles addObject:track.name];
+                [self.playlist.songURIs addObject:track.spotifyURL.absoluteString];
+                
+            }
+            [self addPlaylistToDatabase];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message"
+                                                            message:@"Albums have been added!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+
+        }];
+    }];
+    
+}
+
+#pragma mark - NowPlayingDelegate methods
+
+- (NSURL *)getRandomTrackURI {
+    
+    int rand = arc4random() % self.playlist.songURIs.count;
+    
+    NSURL *url = [NSURL URLWithString:[self.playlist.songURIs objectAtIndex:rand]];
+    
+    return url;
+}
+/*
 -(void)waitAndFillTrackPool {
 	
 	[SPAsyncLoading waitUntilLoaded:[SPSession sharedSession] timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedession, NSArray *notLoadedSession) {
@@ -316,7 +423,7 @@
                     NSLog(@"your user name is %@",[[SPSession sharedSession] user].canonicalName);
                     
                     [self.tableView reloadData];
-
+                    
                     self.playlist.songTitles = [[NSMutableArray alloc] init];
                     self.playlist.songURIs  = [[NSMutableArray alloc] init];
                     
@@ -327,74 +434,14 @@
                         [self.playlist.songURIs addObject:track.spotifyURL.absoluteString];
                     }
                     [self addPlaylistToDatabase];
+                    NSLog(@"what is thiasdfasdfs help %@",[[SPSession sharedSession] userPlaylists].playlists);
+                    
 				}];
 			}];
 		}];
 	}];
 }
-
-- (void)addPlaylistToDatabase {
-    
-    self.playlist.parsePlaylist = [PFObject objectWithClassName:@"Playlist"];
-    
-    self.playlist.parsePlaylist[@"songURIs"] = self.playlist.songURIs;
-    self.playlist.parsePlaylist[@"songTitles"] = self.playlist.songTitles;
-    self.playlist.parsePlaylist[@"owner"] = [[SPSession sharedSession] user].canonicalName;
-    self.playlist.parsePlaylist[@"name"]  = self.playlist.name;
-    
-    [self.playlist.parsePlaylist save];
-}
-
--(NSArray *)playlistsInFolder:(SPPlaylistFolder *)aFolder {
-	
-	NSMutableArray *playlists = [NSMutableArray arrayWithCapacity:[[aFolder playlists] count]];
-	
-	for (id playlistOrFolder in aFolder.playlists) {
-		if ([playlistOrFolder isKindOfClass:[SPPlaylist class]]) {
-			[playlists addObject:playlistOrFolder];
-		} else {
-			[playlists addObjectsFromArray:[self playlistsInFolder:playlistOrFolder]];
-		}
-	}
-	return [NSArray arrayWithArray:playlists];
-}
-
--(NSArray *)tracksFromPlaylistItems:(NSArray *)items {
-	
-	NSMutableArray *tracks = [NSMutableArray arrayWithCapacity:items.count];
-	
-	for (SPPlaylistItem *anItem in items) {
-		if (anItem.itemClass == [SPTrack class]) {
-			[tracks addObject:anItem.item];
-		}
-	}
-	
-	return [NSArray arrayWithArray:tracks];
-}
-
-#pragma mark Playback
-
-- (void)startPlaybackOfTrack:(SPTrack *)aTrack {
-	
-	[SPAsyncLoading waitUntilLoaded:aTrack timeout:5.0 then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
-		[self.playbackManager playTrack:aTrack callback:^(NSError *error) {
-			
-			if (!error) return;
-			
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Couldn't Play"
-															message:error.localizedDescription
-														   delegate:self
-												  cancelButtonTitle:@"OK"
-												  otherButtonTitles:nil];
-			[alert show];
-		}];
-	}];
-}
-
--(void)playbackManagerWillStartPlayingAudio:(SPPlaybackManager *)aPlaybackManager {
-    
-    
-}
+ */
 
 @end
 

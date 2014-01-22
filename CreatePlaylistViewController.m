@@ -38,10 +38,23 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if([segue.identifier isEqualToString:@"createPlaylistSegue"]) {
-        PlaylistTableViewController *controller =
-        (PlaylistTableViewController *)[segue destinationViewController];
+        
+        UITabBarController *tabBarController = (UITabBarController *)[segue destinationViewController];
+        
+        UINavigationController *navigationController = [tabBarController viewControllers][1];
+        
+        PlaylistTableViewController *controller = (PlaylistTableViewController *)[navigationController viewControllers][0];
+        
         controller.playlist = [[Playlist alloc] init];
         controller.playlist.name = self.nameField.text;
+        
+        navigationController = [tabBarController viewControllers][0];
+        PlaylistPickerViewController *pickerController = (PlaylistPickerViewController *)[navigationController viewControllers][0];
+        pickerController.delegate = controller;
+        
+        navigationController = [tabBarController viewControllers][2];
+        NowPlayingViewController *nowPlayingController = (NowPlayingViewController *)[navigationController viewControllers][0];
+        nowPlayingController.delegate = controller;
     }
 }
 

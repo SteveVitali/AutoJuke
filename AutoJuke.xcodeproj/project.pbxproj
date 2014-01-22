@@ -17,7 +17,6 @@
 		11A0075B188B2DA7005EDDDF /* LibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A00758188B2DA7005EDDDF /* LibraryAPI.m */; };
 		11A0075C188B2DA7005EDDDF /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0075A188B2DA7005EDDDF /* PersistencyManager.m */; };
 		11A0075F188B4AEB005EDDDF /* SlavePlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0075E188B4AEB005EDDDF /* SlavePlaylistViewController.m */; };
-		11A00763188B54F1005EDDDF /* AddSongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A00762188B54F1005EDDDF /* AddSongsViewController.m */; };
 		11A007CB188B7DB5005EDDDF /* FUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A007A6188B7DB5005EDDDF /* FUIAlertView.m */; };
 		11A007CC188B7DB5005EDDDF /* FUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A007A8188B7DB5005EDDDF /* FUIButton.m */; };
 		11A007CD188B7DB5005EDDDF /* FUICellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A007AA188B7DB5005EDDDF /* FUICellBackgroundView.m */; };
@@ -48,11 +47,20 @@
 		11A007F1188B7EB1005EDDDF /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11A007E7188B7EB1005EDDDF /* Lato-LightItalic.ttf */; };
 		11A007F2188B7EB1005EDDDF /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11A007E8188B7EB1005EDDDF /* Lato-Regular.ttf */; };
 		11A007F5188B846A005EDDDF /* PlaylistPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A007F4188B846A005EDDDF /* PlaylistPickerViewController.m */; };
+		11A007F8188B9397005EDDDF /* NowPlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A007F7188B9397005EDDDF /* NowPlayingViewController.m */; };
+		11A00800188BAC96005EDDDF /* PlaylistPickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A007FF188BAC96005EDDDF /* PlaylistPickerItem.m */; };
 		11F963D1188AF4330051FC0C /* CreatePlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */; };
 		11F963DB188AF53D0051FC0C /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963DA188AF53D0051FC0C /* Playlist.m */; };
 		11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */; };
 		11F963E8188B00290051FC0C /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F963E7188B00290051FC0C /* MainWindow_iPhone.xib */; };
 		11F963EB188B114C0051FC0C /* PlaylistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F963EA188B114C0051FC0C /* PlaylistTableViewController.m */; };
+		BC0EE883188BB4E70028994A /* glyphicons_164_iphone_transfer.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0EE880188BB4E70028994A /* glyphicons_164_iphone_transfer.png */; };
+		BC0EE884188BB4E70028994A /* glyphicons_173_play.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0EE881188BB4E70028994A /* glyphicons_173_play.png */; };
+		BC0EE885188BB4E70028994A /* glyphicons_239_albums.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0EE882188BB4E70028994A /* glyphicons_239_albums.png */; };
+		BC0EE889188BBB780028994A /* glyphicons_220_play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0EE888188BBB780028994A /* glyphicons_220_play_button.png */; };
+		BC0EE88D188BBBC10028994A /* glyphicons_170_step_backward.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0EE88A188BBBC10028994A /* glyphicons_170_step_backward.png */; };
+		BC0EE88E188BBBC10028994A /* glyphicons_174_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0EE88B188BBBC10028994A /* glyphicons_174_pause.png */; };
+		BC0EE88F188BBBC10028994A /* glyphicons_178_step_forward.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0EE88C188BBBC10028994A /* glyphicons_178_step_forward.png */; };
 		BC5DF596188AB95C00845C4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA2DC5A188A4CF600667BB9 /* Main.storyboard */; };
 		BC667627188AD63B008FACAF /* CocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC667626188AD63B008FACAF /* CocoaLibSpotify.a */; };
 		BCA2DC49188A4CF600667BB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA2DC48188A4CF600667BB9 /* Foundation.framework */; };
@@ -104,8 +112,6 @@
 		11A0075A188B2DA7005EDDDF /* PersistencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistencyManager.m; sourceTree = "<group>"; };
 		11A0075D188B4AEB005EDDDF /* SlavePlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlavePlaylistViewController.h; sourceTree = "<group>"; };
 		11A0075E188B4AEB005EDDDF /* SlavePlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlavePlaylistViewController.m; sourceTree = "<group>"; };
-		11A00761188B54F1005EDDDF /* AddSongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSongsViewController.h; sourceTree = "<group>"; };
-		11A00762188B54F1005EDDDF /* AddSongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSongsViewController.m; sourceTree = "<group>"; };
 		11A007A4188B7DB5005EDDDF /* FlatUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatUIKit.h; sourceTree = "<group>"; };
 		11A007A5188B7DB5005EDDDF /* FUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUIAlertView.h; sourceTree = "<group>"; };
 		11A007A6188B7DB5005EDDDF /* FUIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUIAlertView.m; sourceTree = "<group>"; };
@@ -157,6 +163,10 @@
 		11A007E8188B7EB1005EDDDF /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		11A007F3188B846A005EDDDF /* PlaylistPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistPickerViewController.h; sourceTree = "<group>"; };
 		11A007F4188B846A005EDDDF /* PlaylistPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistPickerViewController.m; sourceTree = "<group>"; };
+		11A007F6188B9397005EDDDF /* NowPlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowPlayingViewController.h; sourceTree = "<group>"; };
+		11A007F7188B9397005EDDDF /* NowPlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NowPlayingViewController.m; sourceTree = "<group>"; };
+		11A007FE188BAC96005EDDDF /* PlaylistPickerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistPickerItem.h; sourceTree = "<group>"; };
+		11A007FF188BAC96005EDDDF /* PlaylistPickerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistPickerItem.m; sourceTree = "<group>"; };
 		11F963CF188AF4330051FC0C /* CreatePlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreatePlaylistViewController.h; path = ../CreatePlaylistViewController.h; sourceTree = "<group>"; };
 		11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreatePlaylistViewController.m; path = ../CreatePlaylistViewController.m; sourceTree = "<group>"; };
 		11F963D9188AF53D0051FC0C /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
@@ -166,6 +176,13 @@
 		11F963E7188B00290051FC0C /* MainWindow_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow_iPhone.xib; sourceTree = "<group>"; };
 		11F963E9188B114C0051FC0C /* PlaylistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTableViewController.h; sourceTree = "<group>"; };
 		11F963EA188B114C0051FC0C /* PlaylistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableViewController.m; sourceTree = "<group>"; };
+		BC0EE880188BB4E70028994A /* glyphicons_164_iphone_transfer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_164_iphone_transfer.png; sourceTree = "<group>"; };
+		BC0EE881188BB4E70028994A /* glyphicons_173_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_173_play.png; sourceTree = "<group>"; };
+		BC0EE882188BB4E70028994A /* glyphicons_239_albums.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_239_albums.png; sourceTree = "<group>"; };
+		BC0EE888188BBB780028994A /* glyphicons_220_play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_220_play_button.png; sourceTree = "<group>"; };
+		BC0EE88A188BBBC10028994A /* glyphicons_170_step_backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_170_step_backward.png; sourceTree = "<group>"; };
+		BC0EE88B188BBBC10028994A /* glyphicons_174_pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_174_pause.png; sourceTree = "<group>"; };
+		BC0EE88C188BBBC10028994A /* glyphicons_178_step_forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_178_step_forward.png; sourceTree = "<group>"; };
 		BC14F6E5188A98070064CFA1 /* AutoJuke.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AutoJuke.entitlements; sourceTree = "<group>"; };
 		BC667626188AD63B008FACAF /* CocoaLibSpotify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = CocoaLibSpotify.a; sourceTree = "<group>"; };
 		BCA2DC45188A4CF600667BB9 /* AutoJuke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoJuke.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -369,23 +386,39 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		11A007F9188B939F005EDDDF /* MasterControllers */ = {
+			isa = PBXGroup;
+			children = (
+				11F963E9188B114C0051FC0C /* PlaylistTableViewController.h */,
+				11F963EA188B114C0051FC0C /* PlaylistTableViewController.m */,
+				11F963CF188AF4330051FC0C /* CreatePlaylistViewController.h */,
+				11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */,
+				11A007F6188B9397005EDDDF /* NowPlayingViewController.h */,
+				11A007F7188B9397005EDDDF /* NowPlayingViewController.m */,
+			);
+			name = MasterControllers;
+			sourceTree = "<group>";
+		};
+		11A007FA188B93BC005EDDDF /* SlaveControllers */ = {
+			isa = PBXGroup;
+			children = (
+				11A0075D188B4AEB005EDDDF /* SlavePlaylistViewController.h */,
+				11A0075E188B4AEB005EDDDF /* SlavePlaylistViewController.m */,
+				11F963E2188AF8D10051FC0C /* JoinPlaylistViewController.h */,
+				11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */,
+			);
+			name = SlaveControllers;
+			sourceTree = "<group>";
+		};
 		11F963D5188AF4D70051FC0C /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BCA2DC5D188A4CF600667BB9 /* ViewController.h */,
-				BCA2DC5E188A4CF600667BB9 /* ViewController.m */,
-				11F963CF188AF4330051FC0C /* CreatePlaylistViewController.h */,
-				11F963D0188AF4330051FC0C /* CreatePlaylistViewController.m */,
-				11F963E2188AF8D10051FC0C /* JoinPlaylistViewController.h */,
-				11F963E3188AF8D10051FC0C /* JoinPlaylistViewController.m */,
-				11F963E9188B114C0051FC0C /* PlaylistTableViewController.h */,
-				11F963EA188B114C0051FC0C /* PlaylistTableViewController.m */,
-				11A0075D188B4AEB005EDDDF /* SlavePlaylistViewController.h */,
-				11A0075E188B4AEB005EDDDF /* SlavePlaylistViewController.m */,
-				11A00761188B54F1005EDDDF /* AddSongsViewController.h */,
-				11A00762188B54F1005EDDDF /* AddSongsViewController.m */,
 				11A007F3188B846A005EDDDF /* PlaylistPickerViewController.h */,
 				11A007F4188B846A005EDDDF /* PlaylistPickerViewController.m */,
+				11A007FA188B93BC005EDDDF /* SlaveControllers */,
+				11A007F9188B939F005EDDDF /* MasterControllers */,
+				BCA2DC5D188A4CF600667BB9 /* ViewController.h */,
+				BCA2DC5E188A4CF600667BB9 /* ViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -404,6 +437,8 @@
 			children = (
 				11F963D9188AF53D0051FC0C /* Playlist.h */,
 				11F963DA188AF53D0051FC0C /* Playlist.m */,
+				11A007FE188BAC96005EDDDF /* PlaylistPickerItem.h */,
+				11A007FF188BAC96005EDDDF /* PlaylistPickerItem.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -578,8 +613,15 @@
 		BCDC0424188A850000F01D35 /* png */ = {
 			isa = PBXGroup;
 			children = (
+				BC0EE88A188BBBC10028994A /* glyphicons_170_step_backward.png */,
+				BC0EE88B188BBBC10028994A /* glyphicons_174_pause.png */,
+				BC0EE88C188BBBC10028994A /* glyphicons_178_step_forward.png */,
+				BC0EE888188BBB780028994A /* glyphicons_220_play_button.png */,
 				BCDC0425188A850000F01D35 /* glyphicons_000_glass.png */,
 				BCDC042B188A850000F01D35 /* glyphicons_006_user_add.png */,
+				BC0EE880188BB4E70028994A /* glyphicons_164_iphone_transfer.png */,
+				BC0EE881188BB4E70028994A /* glyphicons_173_play.png */,
+				BC0EE882188BB4E70028994A /* glyphicons_239_albums.png */,
 			);
 			name = png;
 			path = glyphicons/png;
@@ -669,19 +711,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A007F0188B7EB1005EDDDF /* Lato-Light.ttf in Resources */,
+				BC0EE889188BBB780028994A /* glyphicons_220_play_button.png in Resources */,
 				BCA2DC61188A4CF600667BB9 /* Images.xcassets in Resources */,
 				11A007EB188B7EB1005EDDDF /* Lato-Bold.ttf in Resources */,
 				11A007ED188B7EB1005EDDDF /* Lato-Hairline.ttf in Resources */,
+				BC0EE88E188BBBC10028994A /* glyphicons_174_pause.png in Resources */,
 				11F963E8188B00290051FC0C /* MainWindow_iPhone.xib in Resources */,
+				BC0EE884188BB4E70028994A /* glyphicons_173_play.png in Resources */,
+				BC0EE88F188BBBC10028994A /* glyphicons_178_step_forward.png in Resources */,
 				BCA2DC53188A4CF600667BB9 /* InfoPlist.strings in Resources */,
 				11A007EC188B7EB1005EDDDF /* Lato-BoldItalic.ttf in Resources */,
+				BC0EE883188BB4E70028994A /* glyphicons_164_iphone_transfer.png in Resources */,
 				BCDC0631188A850500F01D35 /* glyphicons_000_glass.png in Resources */,
 				11A007EE188B7EB1005EDDDF /* Lato-HairlineItalic.ttf in Resources */,
 				11A007EF188B7EB1005EDDDF /* Lato-Italic.ttf in Resources */,
+				BC0EE885188BB4E70028994A /* glyphicons_239_albums.png in Resources */,
 				11A007E9188B7EB1005EDDDF /* Lato-Black.ttf in Resources */,
 				11A007F1188B7EB1005EDDDF /* Lato-LightItalic.ttf in Resources */,
 				11A007EA188B7EB1005EDDDF /* Lato-BlackItalic.ttf in Resources */,
 				BCA2DCB7188A4F4300667BB9 /* SPLoginResources.bundle in Resources */,
+				BC0EE88D188BBBC10028994A /* glyphicons_170_step_backward.png in Resources */,
 				BC5DF596188AB95C00845C4F /* Main.storyboard in Resources */,
 				BCDC0637188A850500F01D35 /* glyphicons_006_user_add.png in Resources */,
 				11A007F2188B7EB1005EDDDF /* Lato-Regular.ttf in Resources */,
@@ -719,7 +768,6 @@
 				11A007F5188B846A005EDDDF /* PlaylistPickerViewController.m in Sources */,
 				11A007D8188B7DB5005EDDDF /* UIProgressView+FlatUI.m in Sources */,
 				11F963E4188AF8D10051FC0C /* JoinPlaylistViewController.m in Sources */,
-				11A00763188B54F1005EDDDF /* AddSongsViewController.m in Sources */,
 				11A007DC188B7DB5005EDDDF /* UITableViewCell+FlatUI.m in Sources */,
 				11A007D9188B7DB5005EDDDF /* UISlider+FlatUI.m in Sources */,
 				11A0075F188B4AEB005EDDDF /* SlavePlaylistViewController.m in Sources */,
@@ -731,6 +779,8 @@
 				11A007CE188B7DB5005EDDDF /* FUIPopoverBackgroundView.m in Sources */,
 				11A007CC188B7DB5005EDDDF /* FUIButton.m in Sources */,
 				11A007DD188B7DB5005EDDDF /* UIToolbar+FlatUI.m in Sources */,
+				11A00800188BAC96005EDDDF /* PlaylistPickerItem.m in Sources */,
+				11A007F8188B9397005EDDDF /* NowPlayingViewController.m in Sources */,
 				11A007D5188B7DB5005EDDDF /* UIImage+FlatUI.m in Sources */,
 				11A007DA188B7DB5005EDDDF /* UIStepper+FlatUI.m in Sources */,
 				BCA2DC55188A4CF600667BB9 /* main.m in Sources */,

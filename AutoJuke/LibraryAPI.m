@@ -18,7 +18,7 @@
 @interface LibraryAPI() {
     
     PersistencyManager *persistencyManager;
-
+    
 }
 @end
 
