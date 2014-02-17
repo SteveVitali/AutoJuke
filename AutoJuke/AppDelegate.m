@@ -9,18 +9,20 @@
 #import "AppDelegate.h"
 #import "CocoaLibSpotify.h"
 #import "ViewController.h"
+#import <Parse/Parse.h>
+#import "appkey.c"
 
 #define SP_LIBSPOTIFY_DEBUG_LOGGING 1
 
-#include "appkey.c"
-
 @implementation AppDelegate
+
+BOOL loggedIn;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    /***************************
-     ** ViewController Access **
-     ***************************/
+    /**************************************
+     ** Set Up ViewController References **
+     **************************************/
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -32,32 +34,90 @@
 	}
     
 	self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
     
-	NSString *userAgent = [[[NSBundle mainBundle] infoDictionary] valueForKey:(__bridge NSString *)kCFBundleIdentifierKey];
-	NSData *appKey = [NSData dataWithBytes:&g_appkey length:g_appkey_size];
+    /***********************
+     ** Set up Parse API  **
+     ***********************/
     
-	NSError *error = nil;
+    [Parse setApplicationId:@"Lwkw4PMt3tatJojVJkjSV9zLxtkA6wIh6q5yXuBl"
+                  clientKey:@"mIBC4cPOGGbOwKZcXaVdmAGabxDwGp4NuK1mRoGy"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    // TODO following method causes uncaught exception on Sam's iPhone
-	[SPSession initializeSharedSessionWithApplicationKey:appKey
-											   userAgent:userAgent
+    /******************************
+     ** Set up Cocoa/Spotify API **
+     ******************************/
+    
+    // init SPSession ( CocoaLibSession )
+    
+    NSError *error = nil;
+	[SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:&g_appkey length:g_appkey_size]
+											   userAgent:@"com.spotify.SimplePlayer-iOS"
 										   loadingPolicy:SPAsyncLoadingManual
 												   error:&error];
 	if (error != nil) {
 		NSLog(@"CocoaLibSpotify init failed: %@", error);
 		abort();
 	}
+    [[SPSession sharedSession] setDelegate:self];
     
-	[[SPSession sharedSession] setDelegate:self];
+    // Log User In
+    
+    if (! [self loginWithStoredCredentials]) {
+        [self showLoginView];
+    }
+    
+    // END appDidFinishLaunching[...] delegate code
+
+    return YES;
+}
+
+-(void)clearStoredCredentials {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"SpotifyUsers"];
+}
+
+-(BOOL)loginWithStoredCredentials {
+    NSDictionary *storedCredentials = [[NSUserDefaults standardUserDefaults]
+                                       valueForKey:@"SpotifyUsers"];
+    
+    if (storedCredentials.count > 0)
+        // if there are credentials
+    {
+        NSLog(@"Credentials found: Setting...");
+        
+        NSString *username = [storedCredentials allKeys][0];
+        NSString *credential = [storedCredentials valueForKey:username];
+        
+        NSLog(@"username: %@", username);
+        if (credential == nil) NSLog(@"credential string invalid");
+        
+        [[SPSession sharedSession] attemptLoginWithUserName:username
+                                         existingCredential:credential];
+        
+        if (! loggedIn)
+        // if the credentials don't work out
+        {
+            [self clearStoredCredentials];
+            return false;
+        }
+    }
+    else
+    // there are no credentials
+    {
+        [self performSelector:@selector(showLoginView) withObject:nil afterDelay:0.0];
+        return false;
+    }
+    
+    return true;
+}
+
+-(void)showLoginView {
     
 	SPLoginViewController *spotifyLogin = [SPLoginViewController
                                            loginControllerForSession:[SPSession sharedSession]];
 	spotifyLogin.allowsCancel = NO;
 	// ^ To allow the user to cancel (i.e., your application doesn't require a logged-in Spotify user, set this to YES.
 	[self.viewController presentViewController:spotifyLogin animated:NO completion:nil];
-    
-    return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -95,10 +155,10 @@
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-#pragma mark -
+
 #pragma mark SPSessionDelegate Methods
 
--(void)sessionDidLoginSuccessfully:(SPSession *)aSession {
+- (void)sessionDidLoginSuccessfully:(SPSession *)aSession {
 	// Called after a successful login.
     
 	[SPAsyncLoading waitUntilLoaded:aSession timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
@@ -112,6 +172,8 @@
 			[alert show];
 		}];
 	}];
+    
+    loggedIn = true;
 }
 
 -(void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error {
@@ -120,22 +182,28 @@
 
 -(void)sessionDidLogOut:(SPSession *)aSession; {
 	// Called after a logout has been completed.
+    
+    loggedIn = false;
 }
 
--(void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName {
+-(void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential
+                                                     forUserName:(NSString *)userName {
+    NSLog(@"SPSession logged in; login credentials generated.");
     
-	// Called when login credentials are created. If you want to save user logins, uncomment the code below.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *storedCredentials = [[defaults valueForKey:@"SpotifyUsers"] mutableCopy];
     
-	/*
-     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-     NSMutableDictionary *storedCredentials = [[defaults valueForKey:@"SpotifyUsers"] mutableCopy];
-     
-     if (storedCredentials == nil)
-     storedCredentials = [NSMutableDictionary dictionary];
-     
-     [storedCredentials setValue:credential forKey:userName];
-     [defaults setValue:storedCredentials forKey:@"SpotifyUsers"];
-	 */
+    if (storedCredentials == nil) {
+        NSLog(@"No stored credentials; initializing...");
+        storedCredentials = [NSMutableDictionary dictionary];
+    } else {
+        NSLog(@"didGenerateLoginCredentials only supports 1 saved user blob.");
+        NSLog(@"initializing new credentials..");
+        storedCredentials = [NSMutableDictionary dictionary];
+    }
+    
+    [storedCredentials setValue:credential forKey:userName];
+    [defaults setValue:storedCredentials forKey:@"SpotifyUsers"];
 }
 
 -(void)session:(SPSession *)aSession didEncounterNetworkError:(NSError *)error; {
@@ -156,12 +224,8 @@
 
 -(void)session:(SPSession *)aSession recievedMessageForUser:(NSString *)aMessage; {
 	// Called when the Spotify service wants to relay a piece of information to the user.
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:aMessage
-													message:@"This message was sent to you from the Spotify service."
-												   delegate:nil
-										  cancelButtonTitle:@"OK"
-										  otherButtonTitles:nil];
-	[alert show];
+
 }
+
 
 @end

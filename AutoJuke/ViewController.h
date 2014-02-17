@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FUIButton.h"
 
 @interface ViewController : UIViewController
+
+- (IBAction)didPressHostButton:(id)sender;
+- (IBAction)didPressJoinButton:(id)sender;
+
+@property (weak, nonatomic) IBOutlet FUIButton *hostButton;
+@property (weak, nonatomic) IBOutlet FUIButton *joinButton;
+
 
 @end

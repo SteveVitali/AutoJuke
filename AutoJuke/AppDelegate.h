@@ -13,8 +13,8 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, SPSessionDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UIViewController *viewController;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
 
 @end
 
